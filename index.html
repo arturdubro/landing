@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Морской бой</title>
+	<link href="./css/land.css" media="screen" rel="stylesheet" type="text/css">
+	<link href="./css/demo.css" media="screen" rel="stylesheet" type="text/css">
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript">$(document).bind("mobileinit", function(){$.extend($.mobile,{autoInitializePage:false})});</script>
+	<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+	<script type="text/javascript" src="demo.js"></script>
+</head>
+<body>
+<div class="mainframe">
+	<div class="topline">
+		<span class="logo">BQ</span><span class="batship">Морской Бой</span><span class="sherlock">Шерлок</span><span class="download">Презентация&nbsp;&nbsp;<img src="./img/download.png" style="vertical-align: middle;"></span><span class="vk"><img src="./img/vk.png" style="vertical-align: middle;"></span><span class="claim">Заявка</span><span class="contacts">Контакты</span>
+	</div>
+	<div class="firstslide"></div>
+	<div class="maintext">
+		Морской бой – это командная игра,<br>использующая виртуальные инструменты<br> для реальных приключений.
+	</div>
+	<div class="pretext-extend">
+		Задача игры <span style="color:rgb(204,51,51);">найти</span> и <span style="color:rgb(204,51,51);">потопить</span> корабли<br> соперников.
+	</div>
+	<div style="clear:both;"></div>
+	<div class="text-extend">
+		<div class="text-col">
+			<span class="bignum">1</span><span class="redhead">Найти</span><br>
+			В игре вы ищите корабли, разгадывая загадки с помощью вашего телефона или планшета.
+		</div>
+		<div class="text-col">
+			<span class="bignum">2</span><span class="redhead">Потопить</span><br>
+			Чтобы потопить корабли вам нужно пройти захватывающие испытания в реальном мире.
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="post-extend"><img src="./img/horizline.png"></div>
+	<div class="contest-examples">
+		<div class="header">Испытаnия</div>
+		<div class="iconset">
+			<div class="one-icon" id="icon1"><img src="./img/extreme-red.png" id="extreme"><br>Экстремальные</div>
+			<div class="one-icon" id="icon2"><img src="./img/teamwork.png" id="teamwork"><br>Командные</div>
+			<div class="one-icon" id="icon3"><img src="./img/fungames.png" id="fungames"><br>Развлекательные</div>
+			<div class="one-icon" id="icon4"><img src="./img/citytour.png" id="citytour"><br>Арт-объект</div>
+			<div class="one-icon" id="icon5"><img src="./img/cyphers.png" id="cyphers"><br>Шифры</div>
+		</div>
+		<div class="photoset">
+			<div class="leftarrowgallery"></div>
+			<div class="rightarrowgallery"></div>
+			<div class="showroom">
+				<div class="extreme">
+					<ul class="photogallery">
+					<li><img src='./photo/1.jpg'><br>свободное падение</li>
+					<li><img src='./photo/2.jpg'><br>мост</li>
+					<li><img src='./photo/3.jpg'><br>слепой водитель</li>
+					</ul>
+				</div>
+				<div class="teamwork">
+					<ul class="photogallery">
+					<li><img src='./photo/5.jpg'><br>водопровод</li>
+					<li><img src='./photo/6.jpg'><br>мегафутбол</li>
+					<li><img src='./photo/7.jpg'><br>опасная жидкость</li>
+					<li><img src='./photo/8.jpg'><br>слепой лабиринт</li>
+					</ul>
+				</div>
+				<div class="fungames">
+					<ul class="photogallery">
+					<li><img src='./photo/9.jpg'><br>агент-пароль</li>
+					<li><img src='./photo/10.jpg'><br>чек на сумму</li>
+					<li><img src='./photo/17.jpg'><br>мегапазл</li>
+					</ul>
+				</div>
+				<div class="citytour">
+					<ul class="photogallery">
+					<li><img src='./photo/11.jpg'><br>башня грифонов</li>
+					<li><img src='./photo/12.jpg'><br>запасная колонна</li>
+					<li><img src='./photo/13.jpg'><br>шахматный дворик</li>
+					</ul>
+				</div>
+				<div class="cyphers">
+					<ul class="photogallery">
+					<li><img src='./photo/14.jpg'><br>3D зрениие</li>
+					<li><img src='./photo/15.jpg'><br>записка Оттендорфа</li>
+					<li><img src='./photo/16.jpg'><br>слово невидимка</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="demogame">
+		<div class="header">поPROбуй</div>
+		<div class="demogamebg">
+			<div class="startplug" id="startplug">
+				<div class="startdemo" id="startdemo">Попробовать тестовую игру <img src="./img/demo.png" style="vertical-align: middle;"></div>
+			</div>
+			<div class="wrapper">
+				<div class="demoheader">
+					<div class="info"><p style="font-size: 130%;">Флагман • <span id="timer">0:00:00</span></p>
+						<a href="" style="color:#808080; font-size: 90%; text-decoration: none;">Статистика</a><span id="stats"></span></div>
+					<div class="logo"><h1>Морской Бой</h1></div>
+					<a href class="finishdemo">Финиш</a>
+				</div>
+				<div id="videomax1"></div>
+				<div id="videomax2"></div>
+				<div class="main">
+					<div class="leftcol"><script language='javascript'>table(7,7);</script></div>
+					<div class="rightcol">
+						<div id="alert">
+							<div class="hello"><p style="font-size:20px;">Добро пожаловать!</p><br><p style="font-size:20px;">Цель игры:</p> Найти и потопить 2 корабля</p><br><p style="font-size:20px;">Шаг 1:</p>Выбирите и нажмите на клетку на поле слева.</div>
+							<div class="firsttimesure"><p style="font-size:20px; color: red;">Внимание!</p>Каждая открытая, но оставленная без ответа клетка, увеличивает ваше игровое время на 3 минуты.<br><br>Вы уверены что хотите открыть эту клетку?
+								<div class="buttons"><a href="#" class="button yes">Да</a><a href="#" class="button no">Нет</a></div>
+							</div>
+							<div class="sure">Вы уверенны что хотите открыть эту клетку?
+								<div class="buttons"><a href="#" class="button yes">Да</a><a href="#" class="button no">Нет</a></div>
+							</div>
+							<div class="question"><p style="font-size:20px; color: red;">Охранный вопрос клетки</p>
+								Верный ответ покажет вам результат выстрела.<br><br>Мы загадали цифру от 0 до 9 включительно. Угадайте её:
+							</div>
+							<div class="reefquestion"><h2>Риф!</h2><br>
+								Опасность столкновения с рифом!<br>У Вас есть 60 секунд, чтобы дать ответ на вопрос.<br>Мы загадали цифру от 0 до 9 включительно. Угадайте её:<br><span style="color:red;">Осталось: <span id="reeftimer">60</span> сек.</span><br>
+							</div>
+							<div class="reef ok"><h2>Риф</h2><br>
+								Вы успешно уклонились от рифа.<br>
+								Продолжайте поиски корабля.
+							</div>
+							<div class="reef fail"><h2>Риф</h2><br>
+								Вы наткнулись на риф.<br>
+								Штраф - 3 минуты игрового времени.<br>
+								Продолжайте поиски корабля.
+							</div>
+							<div class="ship1">
+								<p style="font-size:20px;">Вы нашли однопалубный корабль!</p><br>Чтобы подбить корабль Вам нужно отправиться в указанное место и, пройдя испытание, получить код на уничтожение корабля.<br>
+								<img src="./img/map-ship1.png" width="365px" style="margin: 10px 0 10px 0;" class="maphide">
+								<div class="videoframe">
+									<img src="./img/video1.png" id='videomin1' width="365px" style="margin: 10px 0 10px 0;">
+									Выполнив задание, введите код ниже и нажмите Ответить:
+								</div>
+								<input type=submit value="Отправиться" data-enhanced="true" id="goahead" class="button">
+							</div>
+							<div class="ship2a">
+								<p style="font-size:20px;">Вы нашли часть корабля.</p><br>Чтобы задание открылось, вам неоходимо найти все части корабля. Ищите дальше.
+							</div>
+							<div class="ship2b">
+								<p style="font-size:20px;">Двупалубник найден!</p><br>Отправляйтесь на поиски клада, не забудьте прихватить с собой карту и свою верную команду.<br>
+								<img src="./img/map-ship2.png" width="365px" style="margin: 10px 0 10px 0;" class="maphide">
+								<div class="videoframe">
+									<img src="./img/video1.png" id='videomin2' width="365px" style="margin: 10px 0 10px 0;">
+									Выполнив задание, введите код ниже и нажмите Ответить:
+								</div>
+								<input type=submit value="Отправиться" data-enhanced="true" id="goahead" class="button">
+							</div>
+							<form action="#" method="POST" class="submit">
+								<input type=text id="simple" value="" class="answer">
+								<div class="buttons"><input type=submit data-enhanced="true" value="Ответить" class="button"></div>
+							</form>
+							<div class="miss"><h2>Мимо!</h2><br>Попробуйте другую клетку.</div>
+							<div class="inn"><h2>Таверна</h2><br>Место, где Вас ждет старый пират. Если Вы не можете найти ответ на охранный вопрос, отправляйтесь к нему за подсказками.<img src="./img/map-inn.png" width="365px" style="margin: 15px 0 0 0;"></div>
+							<div class="mermaid"><h2>Русалка</h2><br>Русалка дает подсказку о местонахождении корабля:<br><i>- Ты поймал удачу за хвост, капитан!<br>Корабль в клетке <span id='mermaid'></span> ;)</i></div>
+							<div class="mine"><h2>Мина</h2><br>Вы напоролись на мину.<br>Штраф - 3 минуты игрового времени.</div>
+							<div class="treasure"><h2>Сокровище</h2><br>Вы нашли сокровище.<br>Бонус - 3 минуты игрового времени</div>
+							<div class="sink1"><p style="font-size:20px;">Поздравляем!</p><br>Вы потопили однопалубник и стали на один шаг ближе к финишу!<br>Теперь попробуйте найти двупалубник ;)</div>
+							<div class="sink2"><p style="font-size:20px;">Поздравляем!</p><br>Вы подбили все корабли. Нажмите на кнопку ФИНИШ.</div>
+							<div class="complete">Это был краткий курс молодого волка. Спасибо, что были с нами. Заходите еще :)</div>
+							<div class="selectcell">Выберите клетку слева для выстрела.</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="fotogallery">
+		<div class="header">фотограfии</div>
+		<div class="emotionset">
+			<div class="leftarrowemotion"></div>
+			<div class="rightarrowemotion"></div>
+			<div class="emotionswrap">
+				<div class="emotions">
+					<ul class="photoemotions">
+					<li><img src='./emotions/1.jpg'></li>
+					<li><img src='./emotions/2.jpg'></li>
+					<li><img src='./emotions/3.jpg'></li>
+					<li><img src='./emotions/4.jpg'></li>
+					<li><img src='./emotions/5.jpg'></li>
+					<li><img src='./emotions/6.jpg'></li>
+					<li><img src='./emotions/7.jpg'></li>
+					<li><img src='./emotions/8.jpg'></li>
+					<li><img src='./emotions/9.jpg'></li>
+					<li><img src='./emotions/10.jpg'></li>
+					<li><img src='./emotions/11.jpg'></li>
+					<li><img src='./emotions/12.jpg'></li>
+					<li><img src='./emotions/13.jpg'></li>
+					<li><img src='./emotions/14.jpg'></li>
+					<li><img src='./emotions/15.jpg'></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="replies">
+		<div class="header">отзывы</div>
+		<div style="clear:both;"></div>
+		<div class="reply-author" style="margin-left:40px;">
+			фотка и описание автора отзыва
+		</div>
+		<div class="reply-left"></div>
+		<div class="reply-text">
+			Выражаем благодарность коллективу компании Best Quest
+		</div>
+		<div class="reply-text" style="margin-left:50px;">
+			Выражаем благодарность коллективу компании Best Quest за проведённую корпоративную игру «Морской бой». Коллектив ООО «Техноавиа-Санкт-Петербург» высоко оценил подготовку и проведение мероприятия. Положительные эмоции надолго запомнились сотрудникам нашей организации.
+		</div>
+		<div class="reply-right"></div>
+		<div class="reply-author">
+			<img src="./img/kokin.png">
+			<span>
+				<h2>Д.Р.Кокин</h2>
+				ТехноАвиа, Руководитель отдела<br> по работе с<br> корпоративными клиентами
+			</span>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="reclaim">
+		<fieldset>
+		<legend>ЗаRвка</legend>
+		<form action="send.php" method="POST" class="reclaim-form">
+			<label>Контактное лицо</label><br>
+			<input type=text name="your_name" placeholder="Ваше имя" class="reclaim-form"><br>
+			<input type=text name="your_email" placeholder="Электронная почта" class="reclaim-form">
+			<input type=text name="your_phone" placeholder="Телефон" class="reclaim-form"><br>
+			<label>Дата проведения</label><label style="margin-left:185px;">Количество участников</label><br>
+			<input type=text name="event_date" placeholder="дд.мм.гггг" class="reclaim-form">
+			<select name="how_many" required class="reclaim-form">
+				<option value="1-20">1-20</option>
+				<option value="21-50">21-50</option>
+				<option value="51-150">51-150</option>
+				<option value="151">151-...</option>
+			</select><br>
+			<label>Текст заявки</label><br>
+			<textarea name="reclaim_text" class="reclaim-form"></textarea>
+			<input type=submit name="submit" value="Отправить заявку" class="reclaim-form">
+			<input type=checkbox name="copy_me" checked class="reclaim-form">Отправить копию мне на email
+			<div class="form-add-phone">Также вы можете связаться с нашим<br> менеджером, по телефону<br><b>8 921 976 38 76</b></div>
+		</form>
+		</fieldset>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="bottomline">
+		<span class="logo">BQ</span><span class="download">Best-Quest.ru</span><span class="sherlock">BQBS.ru</span><span class="vk"><img src="./img/vk.png" style="vertical-align: middle;"></span><span class="contacts">Дизайн сайта formazon.com</span>
+	</div>
+</div>
+</body>
+</html>

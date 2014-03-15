@@ -1,0 +1,417 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400&subset=latin,cyrillic,cyrillic-ext);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700&subset=latin,cyrillic-ext,cyrillic);
+
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-size: 14pt;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	background: #fff;
+	letter-spacing: 0.7pt;
+}
+.mainframe {
+	margin: 0px auto;
+	width: 1280px;
+	position: relative;
+	background: #fff;
+}
+
+/* Верхушка */
+.topline {
+	background: #000;
+	width: 100%;
+	height: 60px;
+	color: #fff;
+	line-height: 60px;
+}
+.logo {
+	margin-left: 45px;
+	margin-top: auto;
+	font-weight: normal;
+}
+.batship {
+	font-weight: normal;
+	margin-left: 50px;
+}
+.sherlock {
+	margin-left: 50px;
+}
+.download {
+	margin-left: 50px;
+}
+.contacts {
+	float: right;
+	margin-right: 50px;
+}
+.claim {
+	float: right;
+	margin-right: 50px;
+}
+.vk {
+	float: right;
+	margin-right: 45px;
+}
+
+/*Заставка*/
+.firstslide {
+	height: 780px;
+	width: 100%;
+	background: url(../img/bs_bg.jpg) no-repeat;
+	background-position: center;
+	background-size: auto 780px;
+}
+.centername {
+	text-align: center;
+	color: #fff;
+	padding-top: 5%;
+}
+.mainname {
+	font-size: 85pt;
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+.mainslogan {
+	font-size: 20pt;
+	text-transform: uppercase;
+	color: rgb(204,51,51);
+	letter-spacing: 6pt;
+}
+.maintext {
+	height: 160px;
+	padding-top: 40px;
+	font-weight: 300;
+	text-align: center;
+	line-height: 28pt;
+	font-size: 18pt;
+	color:#fff;
+	background-color: #333333;
+}
+
+/*Пояснение*/
+.pretext-extend {
+	height: 150px;
+	font-size: 20pt;
+	text-transform: uppercase;
+	text-align: center;
+	padding-top: 70px;
+}
+.text-extend {
+	height: 230px;
+}
+.text-col {
+	float: left;
+	text-align: left;
+	width: 400px;
+	padding-left: 150px;
+	padding-top: 30px;
+}
+.bignum {
+	font-size: 150pt;
+	font-weight: 300;
+	line-height: 160px;
+	color: #000;
+	float: left;
+	margin-right: 40px;
+}
+.redhead {
+	color: rgb(204,51,51);
+	font-size: 18pt;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+/*Испытания*/
+.contest-examples {
+	text-align: center;
+}
+.header {
+	display: inline-block;
+	padding: 10px 100px;
+	margin: 50px auto;
+
+	font-size: 30pt;
+	color: rgb(204,51,51);
+	font-weight: normal;
+	text-transform: uppercase;
+	line-height: 100px;
+	letter-spacing: 6pt;
+	text-align: center;
+	
+	background: url(../img/title-left.png) 10% 100% no-repeat, url(../img/title-right.png) 90% 100% no-repeat;
+	background-size: contain;
+}
+.iconset {
+	width: 100%;
+	height: 100px;
+	text-align: center;
+}
+.one-icon {
+	float: left;
+	padding-left: 8%;
+	height: 100%;
+	text-align: center;
+}
+.photoset {
+	height: 300px;
+	width: 100%;
+	overflow: hidden;
+	margin-top: 50px;
+	z-index: 1;
+	position: relative;
+}
+.showroom {
+	left: 0px;
+	top: 0px;
+	overflow: hidden;
+}
+.photogallery li {
+	list-style: none;
+	float: left;
+	text-align: center;
+	margin-left: 10px;
+}
+.photogallery li img {
+	height: 250px;
+}
+.extreme, .teamwork, .fungames, .citytour, .cyphers {
+	display: none;
+	z-index: 2;
+	float: left;
+	text-align: left;
+	margin-left: 0px;
+}
+.leftarrowgallery {
+	float: left;
+	height: 250px;
+	width: 75px;
+	background: url(../img/leftarrow.png) no-repeat center;
+	background-color: #e6e6e6;
+	z-index: 11;
+	position: relative;
+}
+.rightarrowgallery {
+	float: right;
+	height: 250px;
+	width: 75px;
+	background: url(../img/rightarrow.png) no-repeat center;
+	background-color: #e6e6e6;
+	z-index: 11;
+	position: relative;
+}
+.rightarrowgallery.over {
+	background: url(../img/rightarrow_hover.png) no-repeat center;
+}
+.leftarrowgallery.over {
+	background: url(../img/leftarrow_hover.png) no-repeat center;
+}
+
+/*Демо*/
+.demogame {
+	text-align: center;
+}
+.demogamebg {
+	width: 100%;
+	background: #e6e6e6;
+	height: auto;
+	padding-top: 50px;
+	position: relative;
+}
+.startplug {
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	position: absolute;
+	margin-top: -50px;
+	background: rgba(0,0,0,0.5);
+}
+.startdemo {
+	width: 100%;
+	height: 50px;
+	color: #fff;
+	text-align: center;
+	line-height: 50px;
+	font-weight: lighter;
+	background: rgb(204,51,51);
+	z-index: 11;
+	margin-top: 25%;
+}
+/*Фотоблок*/
+.fotogallery {
+	text-align: center;
+}
+.leftarrowemotion {
+	float: left;
+	height: 100%;
+	width: 75px;
+	background: url(../img/leftarrow.png) no-repeat center;
+	z-index: 11;
+	position: relative;
+}
+.rightarrowemotion {
+	float: right;
+	height: 100%;
+	width: 75px;
+	background: url(../img/rightarrow.png) no-repeat center;
+	z-index: 11;
+	position: relative;
+}
+.rightarrowemotion.over {
+	background: url(../img/rightarrow_hover.png) no-repeat center;
+}
+.leftarrowemotion.over {
+	background: url(../img/leftarrow_hover.png) no-repeat center;
+}
+.emotionset {
+	height: 320px;
+	width: 100%;
+	overflow: hidden;
+	z-index: 1;
+	position: relative;
+}
+.emotions {
+	z-index: 2;
+	float: left;
+	text-align: left;
+	margin-left: -10px;
+}
+.emotionswrap {
+	left: 0px;
+	top: 0px;
+	overflow: hidden;
+	position: absolute;
+}
+.photoemotions li {
+	list-style: none;
+	float: left;
+	text-align: center;
+	margin-left: 10px;
+}
+.photoemotions li img {
+	height: 320px;
+}
+
+/*отзывы*/
+.replies {
+	text-align: center;
+}
+.reply-text {
+	float: left;
+	background: #ededed;
+	margin-top: 75px;
+	padding: 50px;
+	width: 270px;
+	text-align: left;
+	letter-spacing: 0pt;
+}
+.reply-author {
+	float: left;
+	width: 150px;
+	font-size: 11pt;
+}
+.reply-author h2 {
+	color: rgb(204,51,51);
+	font-weight: normal;
+}
+.reply-left {
+	margin-top: 75px;
+	width: 0; 
+	height: 0; 
+	border-left: 50px solid transparent;
+	border-top: 50px solid #ededed;
+	float: left;
+}
+.reply-right {
+	margin-top: 75px;
+	width: 0; 
+	height: 0;
+	border-right: 50px solid transparent;
+	border-top: 50px solid #ededed;
+	float: left;
+}
+/*заявка*/
+.reclaim {
+	text-align: center;
+}
+fieldset {
+	margin: 0 auto;
+	border: solid 2px #ededed;
+	-webkit-border-radius: 20px;
+	-border-radius: 20px;
+	margin-bottom: 80px;
+	margin-top: 50px;
+	width: 800px;
+}
+legend {
+	font-size: 30pt;
+	color: rgb(204,51,51);
+	font-weight: normal;
+	text-transform: uppercase;
+	line-height: 100px;
+	letter-spacing: 6pt;
+	text-align: center;
+	width: 350px;
+
+	background: url(../img/title-left.png) 10% 100% no-repeat, url(../img/title-right.png) 90% 100% no-repeat;
+	background-size: contain;
+}
+form.reclaim-form {
+    margin: 0 auto 10px auto;
+    width: 700px;
+    text-align: left;
+    padding-bottom: 120px;
+}
+label {
+	line-height: 50px;
+}
+input.reclaim-form, textarea.reclaim-form, select.reclaim-form {
+	background: #efefef;
+	border: 1px solid #dedede;
+	padding: 10px;
+	margin-top: 3px;
+	font-size: 0.9em;
+	color: #3a3a3a;
+}
+input[name="copy_me"].reclaim-form {
+	width: auto;
+	margin-right: 10px;
+}
+input[type="submit"].reclaim-form {
+	margin-top: 40px;
+	background-color: rgb(204,51,51);
+	color: #fff;
+	height: 55px;
+}
+input[name="your_phone"], [type="checkbox"].reclaim-form {
+	margin-left: 50px;
+}
+input.reclaim-form {
+	width: 272.5px;
+}
+select.reclaim-form {
+	height: 40px;
+	margin-left: 50px;
+	width: 295px;
+}
+textarea.reclaim-form {
+	height:100px;
+	width: 680px;
+}
+.form-add-phone {
+	float: right;
+	text-align: left;
+	letter-spacing: 0pt;
+	margin-bottom: 50px;
+	margin-right: 25px;
+}
+/*Подвал*/
+.bottomline {
+	background: rgb(204,51,51);
+	width: 100%;
+	height: 60px;
+	color: #fff;
+	line-height: 60px;
+}
