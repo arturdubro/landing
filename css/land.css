@@ -158,16 +158,20 @@ body {
 	background-size: contain;
 }
 .iconset {
-	width: 100%;
+	width: 920px;
+	margin: 0 auto;
 	height: 100px;
 	text-align: center;
 }
 .one-icon {
 	float: left;
-	padding-left: 8%;
+	margin-left: 80px;
 	height: 100%;
 	text-align: center;
 	font-size: 85%;
+}
+.one-icon:first-of-type {
+	margin-left: 0px;
 }
 
 .one-icon img{
