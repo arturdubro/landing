@@ -107,13 +107,14 @@ body {
 }
 .text-extend {
 	height: 230px;
+	width: 900px;
+	margin: 0 auto;
 }
 
 .text-col {
 	float: left;
 	text-align: left;
 	width: 400px;
-	padding-left: 150px;
 	padding-top: 30px;
 }
 .bignum {
