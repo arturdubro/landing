@@ -17,6 +17,7 @@ body {
 	width: 100%;
 	position: relative;
 	background: #fff;
+	min-width: 1280px;
 }
 a {
 	text-decoration: none;
