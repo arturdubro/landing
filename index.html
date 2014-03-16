@@ -227,16 +227,22 @@
 		<form action="send.php" method="POST" class="reclaim-form">
 			<label>Контактное лицо</label><br>
 			<input type=text name="your_name" placeholder="Ваше имя" class="reclaim-form"><br>
+			<div style="float:left; width:300px;">
 			<input type=text name="your_email" placeholder="Электронная почта" class="reclaim-form">
-			<input type=text name="your_phone" placeholder="Телефон" class="reclaim-form"><br>
-			<label>Дата проведения</label><label style="margin-left:185px;">Количество участников</label><br>
+			<label>Дата проведения</label>
 			<input type=text name="event_date" placeholder="дд.мм.гггг" class="reclaim-form">
+			</div>
+			<div style="float:left; margin-left:50px; width:300px;">
+			<input type=text name="your_phone" placeholder="Телефон" class="reclaim-form"><br>
+			<label>Количество участников</label><br>
 			<select name="how_many" required class="reclaim-form">
 				<option value="1-20">1-20</option>
 				<option value="21-50">21-50</option>
 				<option value="51-150">51-150</option>
 				<option value="151">151-...</option>
 			</select><br>
+			</div>
+			<div style="clear:both;"></div>
 			<label>Текст заявки</label><br>
 			<textarea name="reclaim_text" class="reclaim-form"></textarea>
 			<input type=submit name="submit" value="Отправить заявку" class="reclaim-form">

@@ -403,7 +403,7 @@ input[type="submit"].reclaim-form {
 	color: #fff;
 	height: 55px;
 }
-input[name="your_phone"], [type="checkbox"].reclaim-form {
+input[type="checkbox"].reclaim-form {
 	margin-left: 50px;
 }
 input.reclaim-form {
@@ -411,7 +411,6 @@ input.reclaim-form {
 }
 select.reclaim-form {
 	height: 40px;
-	margin-left: 50px;
 	width: 295px;
 }
 textarea.reclaim-form {
