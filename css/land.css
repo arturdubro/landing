@@ -140,10 +140,37 @@ body {
 .contest-examples {
 	text-align: center;
 }
-.header {
+#header {
+   float: left;
+   width: 100%;
+   overflow: hidden;
+   position: relative;
+   padding: 50px 0px;
+   background: url(../img/title-line.png) 100% 50% repeat-x;
+}
+#header ul {
+   clear: left;
+   float: left;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   position: relative;
+   left: 50%;
+   text-align: center;
+}
+#header ul li {
+   display: block;
+   float: left;
+   list-style: none;
+   background-color: #fff;
+   line-height: 100px;
+   margin: 0;
+   position: relative;
+   right: 50%;
+}
+.headertext {
 	display: inline-block;
 	padding: 10px 100px;
-	margin: 50px auto;
 
 	font-size: 30pt;
 	color: rgb(204,51,51);
@@ -151,7 +178,6 @@ body {
 	text-transform: uppercase;
 	line-height: 100px;
 	letter-spacing: 6pt;
-	text-align: center;
 	
 	background: url(../img/title-left.png) 10% 100% no-repeat, url(../img/title-right.png) 90% 100% no-repeat;
 	background-size: contain;
