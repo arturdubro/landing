@@ -64,6 +64,11 @@ body {
 	background-position: center;
 	background-size: auto 780px;
 }
+
+.firstslide.sh {
+	background: url(../img/sh_bg.jpg);
+}
+
 .centername {
 	text-align: center;
 	color: #fff;
