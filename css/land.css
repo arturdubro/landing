@@ -69,15 +69,17 @@ a:visited {
 
 /*Заставка*/
 .firstslide {
-	height: 780px;
+	height: 765px;
 	width: 100%;
 	background: url(../img/bs_bg.jpg) no-repeat;
 	background-position: center;
-	background-size: auto 780px;
+	background-size: auto 765px;
 }
 
 .firstslide.sh {
-	background: url(../img/sh_bg.jpg);
+	background: url(../img/sh_bg.jpg) no-repeat;
+	background-position: center;
+	background-size: auto 765px;
 }
 
 .centername {
