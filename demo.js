@@ -157,7 +157,7 @@ $(document).ready(function(){
     };
 
     $(window).load(function(){
-        $('.extreme').show().css('width', thislayerwidth('extreme')+'px');
+        $('.teamwork').show().css('width', thislayerwidth('teamwork')+'px');
         $('.emotions').show().css('width', thislayerwidth('emotions')+'px');
     });
 
