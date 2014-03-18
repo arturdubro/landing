@@ -155,9 +155,16 @@ $(document).ready(function(){
             };
         return c;
     };
+    
+    function thislayermarginleft(layername){ // только на время пока 3 картинки в каждой категории и только для испытаний!
+        var parentwidth = $('.showroom').width();
+        var layerwidth = thislayerwidth(layername);
+        var result = (parentwidth-layerwidth)/2+'px';
+        return result;
+    };
 
     $(window).load(function(){
-        $('.teamwork').show().css('width', thislayerwidth('teamwork')+'px');
+        $('.teamwork').show().css('width', thislayerwidth('teamwork')+'px').css('margin-left', thislayermarginleft('teamwork'));
         $('.emotions').show().css('width', thislayerwidth('emotions')+'px');
     });
 
@@ -169,7 +176,7 @@ $(document).ready(function(){
                 var icontype = $(this).children('img').attr('src');
                 $('.photoset').children('.showroom').children().hide();
                 var photolayer = $(this).children('img').attr('id');
-                $('.'+photolayer).show().css('width', thislayerwidth(photolayer)+'px');
+                $('.'+photolayer).show().css('width', thislayerwidth(photolayer)+'px').css('margin-left', thislayermarginleft(photolayer));
                 if (icontype.indexOf('red') < 0) {
                     var output = icontype.substr(0, icontype.length-4) + '-red' + icontype.substr(icontype.length-4);
                     $(this).children('img').attr('src', output);
@@ -200,7 +207,7 @@ $(document).ready(function(){
                     var val = marginleft-(list)*width1+'px';
                     $('.'+actualphotos).animate({ "margin-left": val }, "slow" );
                 } else {
-                $('.'+actualphotos).css('margin-left', '0px');
+                // $('.'+actualphotos).css('margin-left', '0px');
                     var num = i + list;
                     if (num < 1) num = 5;
                     if (num > 5) num = 1;
@@ -208,7 +215,7 @@ $(document).ready(function(){
                         $('#icon'+i).children('img').attr('src', './img/'+$('#icon'+i).children('img').attr('id')+'.png');
                         $('.photoset').children('.showroom').children().hide();
                         var photolayer = $('#icon'+num).children('img').attr('id');
-                        $('.'+photolayer).show().css('width', thislayerwidth(photolayer)+'px');
+                        $('.'+photolayer).show().css('width', thislayerwidth(photolayer)+'px').css('margin-left', thislayermarginleft(photolayer));
                         var icontype = $('#icon'+num).children('img').attr('src');
                         var output = icontype.substr(0, icontype.length-4) + '-red' + icontype.substr(icontype.length-4);
                         $('#icon'+num).children('img').attr('src', output);
