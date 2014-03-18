@@ -100,13 +100,9 @@ a:visited {
 	letter-spacing: 6pt;
 }
 .maintext {
-<<<<<<< HEAD
+
 	height: 110px;
 	padding-top: 30px;
-=======
-	height: 120px;
-	padding-top: 40px;
->>>>>>> FETCH_HEAD
 	font-weight: 300;
 	text-align: center;
 	line-height: 28pt;
