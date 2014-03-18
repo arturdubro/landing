@@ -193,10 +193,11 @@ $(document).ready(function(){
                 var actualphotos = $('#icon'+i).children('img').attr('id');
                 var marginleft = $('.'+actualphotos).css('margin-left');
                 marginleft = marginleft.substr(0,marginleft.length-2).valueOf();
-                var width = $('.'+actualphotos).css('width');
-                width = width.substr(0,width.length-2).valueOf();
-                if (marginleft-(list)*1130 <= 0 && marginleft-(list)*1130 >= width*(-1)) {
-                    var val = marginleft-(list)*1130+'px';
+                var width1 = $('.showroom').width();
+                var width2 = $('.'+actualphotos).width();
+                // width = width.substr(0,width.length-2).valueOf();
+                if (marginleft-(list)*width1 <= 0 && marginleft-(list)*width1 >= width2*(-1)) {
+                    var val = marginleft-(list)*width1+'px';
                     $('.'+actualphotos).animate({ "margin-left": val }, "slow" );
                 } else {
                 $('.'+actualphotos).css('margin-left', '-10px');
@@ -207,7 +208,7 @@ $(document).ready(function(){
                         $('#icon'+i).children('img').attr('src', './img/'+$('#icon'+i).children('img').attr('id')+'.png');
                         $('.photoset').children('.showroom').children().hide();
                         var photolayer = $('#icon'+num).children('img').attr('id');
-                        $('.'+photolayer).show().css('width', thislayerwidth(photolayer)+'px');;
+                        $('.'+photolayer).show().css('width', thislayerwidth(photolayer)+'px');
                         var icontype = $('#icon'+num).children('img').attr('src');
                         var output = icontype.substr(0, icontype.length-4) + '-red' + icontype.substr(icontype.length-4);
                         $('#icon'+num).children('img').attr('src', output);
@@ -223,14 +224,14 @@ $(document).ready(function(){
         else var list = -1;
         var marginleft = $('.emotions').css('margin-left');
         marginleft = marginleft.substr(0,marginleft.length-2).valueOf();
-        var width = $('.emotions').css('width');
-        width = width.substr(0,width.length-2).valueOf();
-        if (marginleft-(list)*1280 <= 0 && marginleft-(list)*1280 >= width*(-1)) {
-            var val = marginleft-(list)*1280+'px';
+        var width1 = $('.emotions').width();
+        var width2 = $('.emotionset').width();
+        if (marginleft-(list)*width2 <= 0 && marginleft-(list)*width2 >= width1*(-1)) {
+            var val = marginleft-(list)*width2+'px';
             $('.emotions').animate({ "margin-left": val }, "slow" );
         } else {
-            if (marginleft-(list)*1280 <= 0) event.preventDefault();
-            if (marginleft-(list)*1280 <= width*(-1)) $('.emotions').css('margin-left', '-10px');
+            if (marginleft-(list)*width2 <= 0) event.preventDefault();
+            if (marginleft-(list)*width2 <= width1*(-1)) $('.emotions').css('margin-left', '-10px');
         };
     });
 
