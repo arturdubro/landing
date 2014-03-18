@@ -100,8 +100,13 @@ a:visited {
 	letter-spacing: 6pt;
 }
 .maintext {
+<<<<<<< HEAD
 	height: 110px;
 	padding-top: 30px;
+=======
+	height: 120px;
+	padding-top: 40px;
+>>>>>>> FETCH_HEAD
 	font-weight: 300;
 	text-align: center;
 	line-height: 28pt;
@@ -255,7 +260,6 @@ a:visited {
 	height: 250px;
 	width: 75px;
 	background: url(../img/leftarrow.png) no-repeat center;
-	background-color: #e6e6e6;
 	z-index: 11;
 	position: relative;
 }
@@ -264,7 +268,6 @@ a:visited {
 	height: 250px;
 	width: 75px;
 	background: url(../img/rightarrow.png) no-repeat center;
-	background-color: #e6e6e6;
 	z-index: 11;
 	position: relative;
 }
