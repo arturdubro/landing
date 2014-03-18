@@ -149,8 +149,8 @@ $(document).ready(function(){
     });
 
     function thislayerwidth(layername){
-        var c = 0;
-        for (var l = 1; l <= $('.'+layername+' :first-child li').length; l++) {
+        var c = $('.'+layername+' :first-child li:nth-child(1) img').width();
+        for (var l = 2; l <= $('.'+layername+' :first-child li').length; l++) {
                 c = c + $('.'+layername+' :first-child li:nth-child('+l+') img').width() + 10;
             };
         return c;
@@ -200,7 +200,7 @@ $(document).ready(function(){
                     var val = marginleft-(list)*width1+'px';
                     $('.'+actualphotos).animate({ "margin-left": val }, "slow" );
                 } else {
-                $('.'+actualphotos).css('margin-left', '-10px');
+                $('.'+actualphotos).css('margin-left', '0px');
                     var num = i + list;
                     if (num < 1) num = 5;
                     if (num > 5) num = 1;
@@ -231,7 +231,7 @@ $(document).ready(function(){
             $('.emotions').animate({ "margin-left": val }, "slow" );
         } else {
             if (marginleft-(list)*width2 <= 0) event.preventDefault();
-            if (marginleft-(list)*width2 <= width1*(-1)) $('.emotions').css('margin-left', '-10px');
+            if (marginleft-(list)*width2 <= width1*(-1)) $('.emotions').css('margin-left', '0px');
         };
     });
 

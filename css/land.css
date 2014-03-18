@@ -238,7 +238,9 @@ a:visited {
 	margin-left: 10px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	
+}
+.photogallery li:first-of-type {
+	margin-left: 0px;
 }
 .photogallery li img {
 	height: 250px;
@@ -341,7 +343,6 @@ a:visited {
 	z-index: 2;
 	float: left;
 	text-align: left;
-	margin-left: -10px;
 }
 .emotionswrap {
 	left: 0px;
@@ -354,6 +355,9 @@ a:visited {
 	float: left;
 	text-align: center;
 	margin-left: 10px;
+}
+.photoemotions li:first-of-type {
+	margin-left: 0px;
 }
 .photoemotions li img {
 	height: 320px;
