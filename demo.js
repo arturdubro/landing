@@ -135,6 +135,34 @@
         };
     };
 
+    function setupAjaxForm(form_id, form_validations) {
+        var form = '#' + form_id;
+        var form_message = form + '-message';
+        var disableSubmit = function(val) {
+            $(form + ' input[type=submit]').attr('disabled', val);
+        };
+        $(form).ajaxSend(function(){
+            $(form_message).removeClass().addClass('loading').html('Loading...').fadeIn();
+        });
+        var options = {
+            dataType:  'json',
+            beforeSubmit: function(){
+                if(typeof form_validations == "function" && !form_validations()) {
+                    return false;
+                }
+                disableSubmit(true);
+            },
+            success: function(json){
+                $(form_message).hide();
+                $(form_message).removeClass().addClass(json.type).html(json.message).fadeIn('slow');
+                disableSubmit(false);
+                if(json.type == 'success')
+                    $(form).clearForm().hide();
+            }
+        };
+        $(form).ajaxForm(options);
+    };
+
 $(document).ready(function(){
     var cell = '';
     var currentcellid = '';
@@ -148,6 +176,8 @@ $(document).ready(function(){
         $('#startplug').hide().trigger('startgametimer');
     });
 
+    new setupAjaxForm('contact-us');
+
     function thislayerwidth(layername){
         var c = $('.'+layername+' :first-child li:nth-child(1) img').width();
         for (var l = 2; l <= $('.'+layername+' :first-child li').length; l++) {
@@ -155,7 +185,7 @@ $(document).ready(function(){
             };
         return c;
     };
-    
+
     function thislayermarginleft(layername){ // только на время пока 3 картинки в каждой категории и только для испытаний!
         var parentwidth = $('.showroom').width();
         var layerwidth = thislayerwidth(layername);
