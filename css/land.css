@@ -110,6 +110,49 @@ a:visited {
 	color:#fff;
 	background-color: #333333;
 }
+.kawasaki {
+	width: 100%;
+	background-color: #ededed;
+}
+.yamaha {
+	width: 1100px;
+	height: 300px;
+	margin: 0 auto;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.kawasaki-text {
+	float: left;
+	margin-top: 75px;
+	background-color: #fff;
+	padding: 30px;
+	width: 800px;
+	text-align: left;
+	letter-spacing: 0pt;
+}
+.kawasaki-arrow {
+	float: left;
+	margin-top: 75px;
+	width: 0; 
+	height: 0; 
+	border-right: 30px solid transparent;
+	border-top: 30px solid #fff;
+}
+.kawasaki-face {
+	float: left;
+	width: 170px;
+	font-size: 10pt;
+	color: #949494;
+	margin-left: 10px;
+	margin-right: 10px;
+	text-align: center;
+}
+.kawasaki-face h2 {
+	color: rgb(204,51,51);
+	font-weight: normal;
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
 
 /*Пояснение*/
 .pretext-extend {
@@ -292,18 +335,18 @@ a:visited {
 	z-index: 10;
 	position: absolute;
 	margin-top: -50px;
-	background: rgba(0,0,0,0.01);
+	background: rgba(0,0,0,0.1);
 }
 .startdemo {
 	width: 100%;
-	height: 50px;
 	color: #fff;
 	text-align: center;
-	line-height: 50px;
 	font-weight: lighter;
-	background: rgb(204,51,51);
 	z-index: 11;
-	margin-top: 25%;
+	margin-top: 15%;
+	font-size: 20pt;
+	color: #000;
+	text-transform: uppercase;
 }
 /*Фотоблок*/
 .fotogallery {
@@ -407,6 +450,20 @@ a:visited {
 	border-right: 30px solid transparent;
 	border-top: 30px solid #ededed;
 	float: left;
+}
+/*клиенты*/
+.clients {
+	width: 100%;
+	border-top: 1.5px solid #a9a9a9;
+	padding-top: 25px;
+	margin-top: 50px;
+	text-align: center;
+}
+.clients img {
+	margin-left: 50px;
+}
+.clients img:first-of-type {
+	margin-left: 0px;
 }
 /*заявка*/
 .reclaim {
