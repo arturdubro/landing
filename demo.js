@@ -194,7 +194,7 @@ $(document).ready(function(){
     };
 
     $(window).load(function(){
-        $('.teamwork').show().css('width', thislayerwidth('teamwork')+'px').css('margin-left', thislayermarginleft('teamwork'));
+        $('.teamwork').show().css('width', thislayerwidth('teamwork')+'px');
         $('.emotions').show().css('width', thislayerwidth('emotions')+'px');
     });
 
@@ -204,9 +204,9 @@ $(document).ready(function(){
                 $('#icon'+i).children('img').attr('src', './img/'+$('#icon'+i).children('img').attr('id')+'.png');
             } else {
                 var icontype = $(this).children('img').attr('src');
-                $('.photoset').children('.showroom').children().hide();
+                $('.photoset').children('.showroom').children().css('marginLeft','0px').hide();
                 var photolayer = $(this).children('img').attr('id');
-                $('.'+photolayer).show().css('width', thislayerwidth(photolayer)+'px').css('margin-left', thislayermarginleft(photolayer));
+                $('.'+photolayer).show().css('width', thislayerwidth(photolayer)+'px');
                 if (icontype.indexOf('red') < 0) {
                     var output = icontype.substr(0, icontype.length-4) + '-red' + icontype.substr(icontype.length-4);
                     $(this).children('img').attr('src', output);
@@ -222,35 +222,42 @@ $(document).ready(function(){
         $(this).removeClass('over');
     });
     $(document).on('vclick','.rightarrowgallery, .leftarrowgallery', function(){
-        if ($(this).attr('class').indexOf('right') >= 0) var list = +1
-        else var list = -1;
+        if ($(this).attr('class').indexOf('right') >= 0) var list = -1
+            else var list = +1;
         for (var i = 1; i <= 5; i++) {
             var input = $('#icon'+i).children('img').attr('src');
             if (input.indexOf('red') > 0) {
                 var actualphotos = $('#icon'+i).children('img').attr('id');
-                var marginleft = $('.'+actualphotos).css('margin-left');
-                marginleft = marginleft.substr(0,marginleft.length-2).valueOf();
+                var marginleft = $('.'+actualphotos).css('marginLeft');
+                mrgnleft = parseInt(marginleft.substr(0,marginleft.length-2).valueOf());
                 var width1 = $('.showroom').width();
                 var width2 = $('.'+actualphotos).width();
-                // width = width.substr(0,width.length-2).valueOf();
-                if (marginleft-(list)*width1 <= 0 && marginleft-(list)*width1 >= width2*(-1)) {
-                    var val = marginleft-(list)*width1+'px';
-                    $('.'+actualphotos).animate({ "margin-left": val }, "slow" );
-                } else {
-                // $('.'+actualphotos).css('margin-left', '0px');
-                    var num = i + list;
+                if (mrgnleft == 0 && list > 0 || mrgnleft+(list)*width1 <= (list)*width2 && list < 0) {
+                    var num = i - list;
                     if (num < 1) num = 5;
                     if (num > 5) num = 1;
                     if (num > 0 && num < 6) {
                         $('#icon'+i).children('img').attr('src', './img/'+$('#icon'+i).children('img').attr('id')+'.png');
-                        $('.photoset').children('.showroom').children().hide();
+                        $('.photoset').children('.showroom').children().css('marginLeft','0px').hide();
                         var photolayer = $('#icon'+num).children('img').attr('id');
-                        $('.'+photolayer).show().css('width', thislayerwidth(photolayer)+'px').css('margin-left', thislayermarginleft(photolayer));
+                        $('.'+photolayer).show().css('width', thislayerwidth(photolayer)+'px');
                         var icontype = $('#icon'+num).children('img').attr('src');
                         var output = icontype.substr(0, icontype.length-4) + '-red' + icontype.substr(icontype.length-4);
                         $('#icon'+num).children('img').attr('src', output);
                         break;
                     };
+                } else {
+                    if (list > 0) {
+                        var val = (marginleft+width1)/-width1;
+                        if (val > 1) val = marginleft+width1+'px'
+                        else val = '0px';
+                    }
+                    if (list < 0) {
+                        var val = (width2 - width1 + marginleft)/width1;
+                        if (val > 1) val = marginleft-width1+'px'
+                        else val = 0-(width2-width1)+'px';
+                    }
+                    $('.'+actualphotos).animate({ "marginLeft": val }, "slow" );
                 };
             };
         };
