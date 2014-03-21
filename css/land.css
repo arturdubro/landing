@@ -403,6 +403,10 @@ a:visited {
 }
 .photoemotions li img {
 	height: 320px;
+	margin-left: 10px;
+}
+.photoemotions li img:first-of-type {
+	margin-left: 0px;
 }
 
 /*отзывы*/

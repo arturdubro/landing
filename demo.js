@@ -170,6 +170,7 @@ $(document).ready(function(){
     var shiptype = '';
     var notfirsttime = '1';
     var stages = 1;
+    var currentphotoset = 1;
 
     $(document).bind('startgametimer', startTime);
     $(document).on('vclick', '#startdemo', function(){
@@ -178,25 +179,34 @@ $(document).ready(function(){
 
     new setupAjaxForm('contact-us');
 
+    $(window).load(function(){
+        $('.teamwork').show().css('width', thislayerwidth('teamwork')+'px');
+        $('.emotions').show().css({'width': emotionslayerwidth(), 'marginLeft': firstemotionsmargin()});
+    });
+
     function thislayerwidth(layername){
-        var c = $('.'+layername+' :first-child li:nth-child(1) img').width();
+        var c = $('.'+layername+' :first-child li:nth-child(1)').width();
         for (var l = 2; l <= $('.'+layername+' :first-child li').length; l++) {
-                c = c + $('.'+layername+' :first-child li:nth-child('+l+') img').width() + 10;
+                c = c + $('.'+layername+' :first-child li:nth-child('+l+')').width() + 10;
             };
         return c;
     };
-
-    function thislayermarginleft(layername){ // только на время пока 3 картинки в каждой категории и только для испытаний!
-        var parentwidth = $('.showroom').width();
-        var layerwidth = thislayerwidth(layername);
-        var result = (parentwidth-layerwidth)/2+'px';
-        return result;
+    function emotionslayerwidth(){
+        var b = $('.emotions li:nth-child(1)').width()+20;
+        for (var l = 2; l <= $('.emotions li').length; l++) {
+            for (var i = 1; i <= 3; i++) {
+                    b = b + $('.emotions li:nth-of-type('+l+') img:nth-of-type('+i+')').width()+10;
+                };
+            };
+        b = b + 'px';
+        return b;
     };
-
-    $(window).load(function(){
-        $('.teamwork').show().css('width', thislayerwidth('teamwork')+'px');
-        $('.emotions').show().css('width', thislayerwidth('emotions')+'px');
-    });
+    function firstemotionsmargin() {
+        var width = $('.emotionset').width();
+        var thiswidth = $('.emotions li:nth-of-type(1)').width()+20;
+        var c = 0-(thiswidth-width)/2+'px';
+        return c;
+    };
 
     $(document).on('vclick', '.one-icon', function(){
         for (var i = 1; i <= 5; i++) {
@@ -262,20 +272,28 @@ $(document).ready(function(){
             };
         };
     });
-
     $(document).on('vclick','.rightarrowemotion, .leftarrowemotion', function(){
-        if ($(this).attr('class').indexOf('right') >= 0) var list = +1
-        else var list = -1;
-        var marginleft = $('.emotions').css('margin-left');
-        marginleft = marginleft.substr(0,marginleft.length-2).valueOf();
-        var width1 = $('.emotions').width();
-        var width2 = $('.emotionset').width();
-        if (marginleft-(list)*width2 <= 0 && marginleft-(list)*width2 >= width1*(-1)) {
-            var val = marginleft-(list)*width2+'px';
-            $('.emotions').animate({ "margin-left": val }, "slow" );
+        if ($(this).attr('class').indexOf('right') >= 0) var list = +1 
+            else var list = -1;
+        if (currentphotoset == $('.emotions li').length) {
+            var val = parseInt(firstemotionsmargin())+10+'px';
+            $('.emotions').animate({'margin-left': val}, 'fast');
+            currentphotoset = 1;
         } else {
-            if (marginleft-(list)*width2 <= 0) event.preventDefault();
-            if (marginleft-(list)*width2 <= width1*(-1)) $('.emotions').css('margin-left', '0px');
+            var marginleft = $('.emotions').css('margin-left');
+            marginleft = marginleft.substr(0,marginleft.length-2).valueOf();
+            var width1 = $('.emotions').width();
+            var width2 = $('.emotionset').width();
+            var thiswidth = $('.emotions li:nth-of-type('+currentphotoset+')').width();
+            var nextwidth = $('.emotions li:nth-of-type('+(currentphotoset+list)+')').width();
+            var centers = (thiswidth+nextwidth)/2+10;
+            if (marginleft-(list)*width2 <= 0 && marginleft-(list)*width2 >= width1*(-1)) {
+                var val = marginleft-list*centers+'px';
+                $('.emotions').animate({ "margin-left": val}, "slow" );
+            } else {
+                if (marginleft-(list)*width2 <= 0) event.preventDefault();
+            };
+            currentphotoset = currentphotoset + list;
         };
     });
 
