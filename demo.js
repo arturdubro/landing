@@ -181,7 +181,7 @@ $(document).ready(function(){
 
     $(window).load(function(){
         $('.teamwork').show().css('width', thislayerwidth('teamwork')+'px');
-        $('.emotions').show().css({'width': emotionslayerwidth(), 'marginLeft': firstemotionsmargin()});
+        $('.emotions').show().css('width', emotionslayerwidth()).css('marginLeft', firstemotionsmargin());
     });
 
     function thislayerwidth(layername){
@@ -192,18 +192,19 @@ $(document).ready(function(){
         return c;
     };
     function emotionslayerwidth(){
-        var b = $('.emotions li:nth-child(1)').width()+20;
+        var b = $('.emotions li:nth-child(1)').width() + 20;
         for (var l = 2; l <= $('.emotions li').length; l++) {
             for (var i = 1; i <= 3; i++) {
-                    b = b + $('.emotions li:nth-of-type('+l+') img:nth-of-type('+i+')').width()+10;
-                };
+                b = b + $('.emotions li:nth-of-type('+l+') img:nth-of-type('+i+')').width() + 10;
             };
+        };
+        if (isMobile.any() || isMobile.iPad()) b = b + 180;
         b = b + 'px';
         return b;
     };
     function firstemotionsmargin() {
         var width = $('.emotionset').width();
-        var thiswidth = $('.emotions li:nth-of-type(1)').width()+20;
+        var thiswidth = $('.emotions li:nth-of-type(1)').width();
         var c = 0-(thiswidth-width)/2+'px';
         return c;
     };

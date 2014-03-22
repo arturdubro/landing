@@ -336,6 +336,9 @@ a:visited {
 	position: absolute;
 	margin-top: -50px;
 	background: rgba(0,0,0,0.1);
+	background: -moz-radial-gradient(circle, rgba(255,255,255,0), rgba(255,255,255,1));
+	background: -ms-radial-gradient(circle, rgba(255,255,255,0), rgba(255,255,255,1));
+	background: -webkit-radial-gradient(circle, rgba(255,255,255,0), rgba(255,255,255,1));
 }
 .startdemo {
 	width: 100%;
