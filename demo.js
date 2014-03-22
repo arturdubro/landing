@@ -1,11 +1,11 @@
     var colnames = ['1','2','3','4','5','6','7','8','9','10'];
     var rownames = ['А','Б','В','Г','Д','Е','Ж','З','И','К'];
     function table(rows, cols) {
-    	var tablecontent = '<table>';
+    	var tablecontent = '<table id="demofield">';
     	for (var row = 0; row < rows; row++) {
     		tablecontent += "<tr>";
     		for (var col = 0; col < cols; col++) {
-    			tablecontent += '<td id='+rownames[row]+colnames[col]+' style="width:'+450/cols+'px; height:'+450/rows+'px;"></td>';
+    			tablecontent += '<td id="'+rownames[row]+colnames[col]+'" style="width:'+450/cols+'px; height:'+450/rows+'px;"></td>';
     		};
     		tablecontent += "</tr>";
     	};
@@ -299,8 +299,29 @@ $(document).ready(function(){
             else $('.leftarrowemotion').show();
         var val = marginleft-list*centers+'px';
         $('.emotions').animate({ "margin-left": val}, "slow" );
-
     });
+    jQuery(function($){
+        $.datepicker.regional['ru'] = {
+                closeText: 'Закрыть',
+                prevText: '&#x3c; Пред',
+                nextText: 'След &#x3e;',
+                currentText: 'Сегодня',
+                monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь',
+                'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+                monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн',
+                'Июл','Авг','Сен','Окт','Ноя','Дек'],
+                dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
+                dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
+                dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
+                weekHeader: 'Не',
+                dateFormat: 'dd.mm.yy',
+                firstDay: 1,
+                isRTL: false,
+                showMonthAfterYear: false,
+                yearSuffix: ''};
+        $.datepicker.setDefaults($.datepicker.regional['ru']);
+    });
+    $('input[name="event_date"]').datepicker();
 
     $(document).on('vclick', '.finishdemo', function(){
         if (stages < 5) event.preventDefault();
