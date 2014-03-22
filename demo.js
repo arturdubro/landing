@@ -301,12 +301,12 @@ $(document).ready(function(){
         var val = marginleft-list*centers+'px';
         $('.emotions').animate({ "margin-left": val}, "slow" );
     });
-    
+
     jQuery(function($){
         $.datepicker.regional['ru'] = {
                 closeText: 'Закрыть',
-                prevText: '&#x3c; Пред',
-                nextText: 'След &#x3e;',
+                prevText: '&larr; Пред',
+                nextText: 'След &rarr;',
                 currentText: 'Сегодня',
                 monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь',
                 'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
