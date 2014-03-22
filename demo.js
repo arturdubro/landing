@@ -301,6 +301,7 @@ $(document).ready(function(){
         var val = marginleft-list*centers+'px';
         $('.emotions').animate({ "margin-left": val}, "slow" );
     });
+    
     jQuery(function($){
         $.datepicker.regional['ru'] = {
                 closeText: 'Закрыть',
@@ -324,10 +325,10 @@ $(document).ready(function(){
     });
     $('input[name="event_date"]').datepicker();
 
-    $(document).on('vclick', '.finishdemo', function(){
+    $(document).on('vclick', '.finishdemo', function(event){
         if (stages < 5) event.preventDefault();
     });
-    $(document).on('vclick', '.info > a', function(){
+    $(document).on('vclick', '.info > a', function(event){
         event.preventDefault();
     });
 
@@ -461,7 +462,7 @@ $(document).ready(function(){
         return goodcells;
     };
     
-    $('.submit').on('submit', function(){
+    $('.submit').on('submit', function(event){
         event.preventDefault();
         var finishedbg = (stages*2)+'0% 100%';
         var input = $('#simple').val();
@@ -577,7 +578,7 @@ $(document).ready(function(){
         $('#simple').val(null);
         if (stages == 5) $('.finishdemo').attr('href', 'http://best-quest.ru');
     });
-    $(document).on('vclick', 'td', function(){
+    $(document).on('vclick', 'td', function(event){
         event.preventDefault();
         currentcellid = '#' + $(this).attr('id');
         exportcellid = currentcellid;
@@ -614,7 +615,7 @@ $(document).ready(function(){
             $("div[class='"+currentcellclass+"']").show();
         };
     });
-    $('.yes').click(function(){
+    $('.yes').click(function(event){
         event.preventDefault();
         $(currentcellid).removeClass('selected').addClass('opened');
         $('#alert').children().hide();
@@ -628,13 +629,13 @@ $(document).ready(function(){
         else $('.question').show();
         $('.submit').show();
     });
-    $('.no').click(function(){
+    $('.no').click(function(event){
         event.preventDefault();
         $(currentcellid).removeClass('selected').addClass('new');
         $('#alert').children().hide();
         $('.selectcell').show();
     });
-    $(document).on('vclick', '#goahead', function(){
+    $(document).on('vclick', '#goahead', function(event){
         event.preventDefault();
         if (isMobile.any()) {
             $(this).prev().fadeIn();
@@ -660,7 +661,7 @@ $(document).ready(function(){
             $(this).hide();
         };
     });
-    $(document).on('vclick', '.videoframe > img', function(){
+    $(document).on('vclick', '.videoframe > img', function(event){
         if ($(this).parent().parent().attr('class') == 'ship2b') {
             ship2video.playVideo();
             $('.main').hide();
