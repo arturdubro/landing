@@ -213,31 +213,37 @@ $(document).ready(function(){
         for (var i = 1; i <= 5; i++) {
             if ($(this).attr('id') !== 'icon'+i) {
                 $('#icon'+i).children('img').attr('src', './img/'+$('#icon'+i).children('img').attr('id')+'.png');
+                $('#icon'+i).removeClass('actual');
             } else {
                 var icontype = $(this).children('img').attr('src');
                 $('.photoset').children('.showroom').children().css('marginLeft','0px').hide();
                 var photolayer = $(this).children('img').attr('id');
                 $('.'+photolayer).show().css('width', thislayerwidth(photolayer)+'px');
-                if (icontype.indexOf('red') < 0) {
-                    var output = icontype.substr(0, icontype.length-4) + '-red' + icontype.substr(icontype.length-4);
-                    $(this).children('img').attr('src', output);
-                };
+                $(this).addClass('actual');
             };
         };
     });
 	
-    $('.rightarrowgallery, .leftarrowgallery, .rightarrowemotion, .leftarrowemotion').mouseover(function(){
-        $(this).addClass('over');
-    });
-    $('.rightarrowgallery, .leftarrowgallery, .rightarrowemotion, .leftarrowemotion').mouseleave(function(){
+    $('.rightarrowgallery, .leftarrowgallery, .rightarrowemotion, .leftarrowemotion').hover(function(){
+        $(this).addClass('over'); 
+    }, function(){
         $(this).removeClass('over');
     });
+    $('.one-icon').hover(function(){
+        var val = $(this).children('img').attr('src');
+        if (val.indexOf('red') < 0) $(this).children('img').attr('src', val.substr(0, val.length-4)+'-red'+val.substr(val.length-4));
+    }, function(){
+        if ($(this).attr('class').indexOf('actual') < 0) $(this).children('img').attr('src', './img/'+$(this).children('img').attr('id')+'.png');
+    });
+
+
     $(document).on('vclick','.rightarrowgallery, .leftarrowgallery', function(){
         if ($(this).attr('class').indexOf('right') >= 0) var list = -1
             else var list = +1;
         for (var i = 1; i <= 5; i++) {
             var input = $('#icon'+i).children('img').attr('src');
             if (input.indexOf('red') > 0) {
+                $('#icon'+i).addClass('actual');
                 var actualphotos = $('#icon'+i).children('img').attr('id');
                 var marginleft = $('.'+actualphotos).css('marginLeft');
                 mrgnleft = parseInt(marginleft.substr(0,marginleft.length-2).valueOf());
@@ -248,12 +254,14 @@ $(document).ready(function(){
                     if (num < 1) num = 5;
                     if (num > 5) num = 1;
                     if (num > 0 && num < 6) {
+                        $('#icon'+i).removeClass('actual');
                         $('#icon'+i).children('img').attr('src', './img/'+$('#icon'+i).children('img').attr('id')+'.png');
                         $('.photoset').children('.showroom').children().css('marginLeft','0px').hide();
                         var photolayer = $('#icon'+num).children('img').attr('id');
                         $('.'+photolayer).show().css('width', thislayerwidth(photolayer)+'px');
                         var icontype = $('#icon'+num).children('img').attr('src');
                         var output = icontype.substr(0, icontype.length-4) + '-red' + icontype.substr(icontype.length-4);
+                        $('#icon'+num).addClass('actual');
                         $('#icon'+num).children('img').attr('src', output);
                         break;
                     };
