@@ -175,6 +175,7 @@ $(document).ready(function(){
     $(document).bind('startgametimer', startTime);
     $(document).on('vclick', '#startdemo', function(){
         $('#startplug').hide().trigger('startgametimer');
+        $('.wrapper').removeClass('blurred');
     });
 
     new setupAjaxForm('contact-us');

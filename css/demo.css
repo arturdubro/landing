@@ -7,6 +7,13 @@
 	margin: 0px auto;
 	width: 987px;
 }
+.wrapper.blurred {
+	filter: blur(3px); 
+	-webkit-filter: blur(3px); 
+	-moz-filter: blur(3px);
+	-o-filter: blur(3px); 
+	-ms-filter: blur(3px);
+}
 .demoheader {
 	background: #e6e6e6;
 	height: 74px;
