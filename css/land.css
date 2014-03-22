@@ -24,8 +24,7 @@ a {
 	color: #fff;
 }
 a:hover {
-	text-decoration: underline;
-	color: #fff;
+	color: #000;
 }
 a:visited {
 	color: #fff;
@@ -39,15 +38,26 @@ a:visited {
 	color: #fff;
 	line-height: 60px;
 }
-.logo {
-	margin-left: 45px;
-	margin-top: auto;
+.topline div:hover {
+	background-color: #f7cf00;
+}
+.topline div:hover a {
+	color: #000;
+}
+.logo, .batship {
+	float: left;
+	margin-left: 25px;
+	padding: 0 20px;
 	font-weight: normal;
 }
-.batship {
+.claim, .vk {
+	float: right;
+	margin-right: 25px;
+	padding: 0 20px;
 	font-weight: normal;
-	margin-left: 50px;
 }
+
+/*временно неактуальные стили*/
 .sherlock {
 	margin-left: 50px;
 }
@@ -57,14 +67,6 @@ a:visited {
 .contacts {
 	float: right;
 	margin-right: 50px;
-}
-.claim {
-	float: right;
-	margin-right: 50px;
-}
-.vk {
-	float: right;
-	margin-right: 45px;
 }
 
 /*Заставка*/
@@ -529,6 +531,10 @@ input[type="submit"].reclaim-form {
 	background-color: rgb(204,51,51);
 	color: #fff;
 	height: 55px;
+}
+input[type="submit"].reclaim-form:hover {
+	background-color: #f7cf00;
+	color: #000;
 }
 input[type="checkbox"].reclaim-form {
 	margin-left: 50px;
