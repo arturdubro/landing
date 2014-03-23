@@ -449,18 +449,17 @@ $(document).ready(function(){
             if (crossclass == 'ship1'|| crossclass == 'sink2') { goodcells = 'miss'; break; };
         };
         if (goodcells !== 'miss') {
-            for (var k = 0; k < 4; k++) {
-                if ($('#'+cross[k]).attr('class') == 'ship2a') { goodcells = 'ship2b'; break; }
-            };
-            if (goodcells !== 'ship2b') {
-                for (var k = 0; k < 4; k++) {
-                if ($('#'+cross[k]).attr('class') == 'new') { goodcells = 'ship2a'; break; }
-                };
-            };
+            if (ship2acellid !== '') {
+                var b = ship2acellid.substr(1);
+                if (jQuery.inArray(b, cross) > 0) {
+                    goodcells = 'ship2b';
+                } else goodcells = 'miss';
+            } else goodcells = 'ship2a';
         };
-        if (goodcells == '') goodcells = 'miss';
         return goodcells;
     };
+
+    var ship2acellid = '';
     
     $('.submit').on('submit', function(event){
         event.preventDefault();
@@ -548,6 +547,7 @@ $(document).ready(function(){
                     else if (temp == 'ship2a') {
                         $('#alert').children().hide();
                         $(currentcellid).addClass(temp);
+                        ship2acellid = currentcellid;
                         $('.'+temp).show();
                         stages++;
                         $('.finishdemo').css({'background-size' : finishedbg});
@@ -555,7 +555,8 @@ $(document).ready(function(){
                     else if (temp == 'ship2b') {
                         $('#alert').children().hide();
                         $(currentcellid).addClass(temp);
-                        $('td.ship2a').removeClass().addClass('ship2b');
+                        $(ship2acellid).removeClass().addClass('ship2b');
+                        ship2acellid = '';
                         $('.'+temp).show();
                         shiptype = 'ship2b';
                         currentcellclass = 'ship2b';
