@@ -68,6 +68,10 @@ div.vk:hover {
 	background-color: #f7cf00;
 }
 
+
+.bq-red {
+	color: rgb(204,51,51);
+}
 /*Заставка*/
 .firstslide {
 	height: 765px;
@@ -353,7 +357,7 @@ div.vk:hover {
 	width: 100%;
 	color: #fff;
 	text-align: center;
-	font-weight: lighter;
+	font-weight: bold;
 	z-index: 11;
 	margin-top: 15%;
 	font-size: 20pt;

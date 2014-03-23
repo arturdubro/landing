@@ -6,6 +6,7 @@
 .wrapper {
 	margin: 0px auto;
 	width: 987px;
+	padding-bottom: 50px;
 }
 .wrapper.blurred {
 	filter: blur(3px); 
@@ -42,7 +43,7 @@
 	top: 20px;
 	left: 355px;
 	width: 190px;
-	background: #2b2c2c url(../img/buttonbg.png) no-repeat;
+	background: #aaaaaa url(../img/buttonbg.png) no-repeat;
 	background-size: 0% 100%;
 	display: inline-block;
 	color: #fff;
@@ -98,6 +99,7 @@ form input[type=text].answer {
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
 }
+
 .yes {
 	margin: 0 10px 0 0;
 	padding: 0 60px;
