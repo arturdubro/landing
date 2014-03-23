@@ -326,8 +326,16 @@ $(document).ready(function(){
     $('input[name="event_date"]').datepicker();
 
     $(document).on('vclick', '.finishdemo', function(event){
-        if (stages < 5) event.preventDefault();
+        if (stages < 5) { 
+            event.preventDefault(); 
+        } else {
+            event.preventDefault();
+            $('.demoheader').hide();
+            $('.main').hide();
+            $('.finished').show();
+        };
     });
+
     $(document).on('vclick', '.info > a', function(event){
         event.preventDefault();
     });
@@ -577,7 +585,6 @@ $(document).ready(function(){
             else $('#simple').val(null);
         };
         $('#simple').val(null);
-        if (stages == 5) $('.finishdemo').attr('href', 'http://best-quest.ru');
     });
     $(document).on('vclick', 'td', function(event){
         event.preventDefault();

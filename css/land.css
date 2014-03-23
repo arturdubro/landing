@@ -78,7 +78,6 @@ div.vk:hover {
 	width: 100%;
 	background: url(../img/bs_bg.jpg) no-repeat;
 	background-position: center;
-	background-size: auto 765px;
 }
 
 .firstslide.sh {
@@ -363,6 +362,11 @@ div.vk:hover {
 	font-size: 20pt;
 	color: #000;
 	text-transform: uppercase;
+}
+.finished {
+	display: none;
+	width: 983px;
+	margin: 0px auto;
 }
 /*Фотоблок*/
 .fotogallery {

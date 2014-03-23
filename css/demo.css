@@ -2,7 +2,6 @@
 	margin: 0;
 	padding: 0;
 }
-
 .wrapper {
 	margin: 0px auto;
 	width: 987px;
@@ -83,7 +82,7 @@ form input[type=text].answer {
 	margin: 15px 0 0;
 }
 .button {
-	background: url(../img/buttonbg.png) no-repeat;
+	background: rgb(204,51,51);
 	background-size: 100% 100%;
 	display: inline-block;
 	line-height: 34px;
@@ -99,7 +98,10 @@ form input[type=text].answer {
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
 }
-
+.button:hover {
+	background-color: #f7cf00;
+	color: #000;
+}
 .yes {
 	margin: 0 10px 0 0;
 	padding: 0 60px;
