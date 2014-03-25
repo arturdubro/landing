@@ -7,7 +7,7 @@
             throw new Exception('Кажется, возникла проблема с вашими данными. Попробуйте заполнить форму заявки еще раз.');
         }
 
-        $email_to = "gromne@yandex.ru";
+        $email_to = "info@best-quest.ru";
         $email_subject = "Заявка на мероприятие";
 
         $your_name = $_POST['your_name']; 
@@ -22,7 +22,7 @@
         if(!preg_match($email_exp,$your_email)) {
           throw new Exception('Введите корректный адрес почты.<br />');
         }
-        $string_exp = "/^[А-Я]{2,12}$/iu";
+        $string_exp = "/^[А-Я .]{2,36}$/iu";
         if(!preg_match($string_exp,$your_name)) {
           throw new Exception('Введите корректное имя.<br />');
         }

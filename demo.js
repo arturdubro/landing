@@ -158,6 +158,7 @@
                 disableSubmit(false);
                 if(json.type == 'success')
                     $(form).clearForm().hide();
+                    $('.thanksalot').show();
             }
         };
         $(form).ajaxForm(options);
