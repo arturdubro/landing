@@ -392,7 +392,7 @@ $(document).ready(function(){
         }
         if (currentcellclass == 'ship1' || currentcellclass == 'ship2b') {
             shiptype = currentcellclass;
-            $('.submit').show();
+            if ($('#alert .'+currentcellclass).children('div').css('display') !== 'none') $('.submit').show();
             $('.'+currentcellclass).show();
         }
         if (currentcellclass == 'first' || currentcellclass == 'second') {
