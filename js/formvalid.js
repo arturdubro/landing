@@ -19,9 +19,10 @@ function setupAjaxForm(form_id, form_validations) {
             $(form_message).hide();
             $(form_message).removeClass().addClass(json.type).html(json.message).fadeIn('slow');
             disableSubmit(false);
-            if(json.type == 'success')
+            if(json.type == 'success') {
                 $(form).clearForm().hide();
                 $('.thanksalot').show();
+            };
         }
     };
     $(form).ajaxForm(options);
