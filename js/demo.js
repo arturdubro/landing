@@ -88,81 +88,6 @@
             return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
         }
     };
-    if (isMobile.any()) {
-        var setvideowidth = '365';
-        var setvideoheight = '205';
-        var setvideoplace = 'videomin';
-    } else {
-        var setvideowidth = '987';
-        var setvideoheight = '555';
-        var setvideoplace = 'videomax';
-    };
-
-    var tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    var ship1video;
-    var ship2video;
-    function onYouTubeIframeAPIReady() {
-        ship1video = new YT.Player( setvideoplace+'1', {
-          width: setvideowidth,
-          height: setvideoheight,
-          videoId: '9KmRakiUPRs',
-          origin: 'demo.bqbs.ru/land/',
-          playerVars: { 'controls': 0, 'showinfo': 0 },
-          events: {
-            'onStateChange': onPlayerStateChange
-          }
-        });
-        ship2video = new YT.Player( setvideoplace+'2', {
-          width: setvideowidth,
-          height: setvideoheight,
-          videoId: 'yeS-MUO4SnU',
-          origin: 'demo.bqbs.ru/land/',
-          playerVars: { 'controls': 0, 'showinfo': 0 },
-          events: {
-            'onStateChange': onPlayerStateChange
-          }
-        });
-    };
-    function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.ENDED || event.data == YT.PlayerState.PAUSED) {
-            if (ship1video.getPlayerState() == 0 || ship1video.getPlayerState() == 2) $('#videomax1').hide();
-            if (ship2video.getPlayerState() == 0 || ship2video.getPlayerState() == 2) $('#videomax2').hide();
-            $('.main').show();
-        };
-    };
-
-    function setupAjaxForm(form_id, form_validations) {
-        var form = '#' + form_id;
-        var form_message = form + '-message';
-        var disableSubmit = function(val) {
-            $(form + ' input[type=submit]').attr('disabled', val);
-        };
-        $(form).ajaxSend(function(){
-            $(form_message).removeClass().addClass('loading').html('Loading...').fadeIn();
-        });
-        var options = {
-            dataType:  'json',
-            beforeSubmit: function(){
-                if(typeof form_validations == "function" && !form_validations()) {
-                    return false;
-                }
-                disableSubmit(true);
-            },
-            success: function(json){
-                $(form_message).hide();
-                $(form_message).removeClass().addClass(json.type).html(json.message).fadeIn('slow');
-                disableSubmit(false);
-                if(json.type == 'success')
-                    $(form).clearForm().hide();
-                    $('.thanksalot').show();
-            }
-        };
-        $(form).ajaxForm(options);
-    };
 
 $(document).ready(function(){
     var cell = '';
@@ -178,153 +103,6 @@ $(document).ready(function(){
         $('#startplug').hide().trigger('startgametimer');
         $('.wrapper').removeClass('blurred');
     });
-
-    new setupAjaxForm('contact-us');
-
-    $(window).load(function(){
-        $('.teamwork').show().css('width', thislayerwidth('teamwork')+'px');
-        $('.emotions').show().css('width', emotionslayerwidth()).css('marginLeft', firstemotionsmargin());
-    });
-
-    function thislayerwidth(layername){
-        var c = $('.'+layername+' :first-child li:nth-child(1)').width();
-        for (var l = 2; l <= $('.'+layername+' :first-child li').length; l++) {
-                c = c + $('.'+layername+' :first-child li:nth-child('+l+')').width() + 10;
-            };
-        return c;
-    };
-    function emotionslayerwidth(){
-        var b = $('.emotions li:nth-child(1)').width() + 20;
-        for (var l = 2; l <= $('.emotions li').length; l++) {
-            for (var i = 1; i <= 3; i++) {
-                b = b + $('.emotions li:nth-of-type('+l+') img:nth-of-type('+i+')').width() + 10;
-            };
-        };
-        if (isMobile.any() || isMobile.iPad()) b = b + 180;
-        b = b + 'px';
-        return b;
-    };
-    function firstemotionsmargin() {
-        var width = $('.emotionset').width();
-        var thiswidth = $('.emotions li:nth-of-type(1)').width();
-        var c = 0-(thiswidth-width)/2+'px';
-        $('.leftarrowemotion').hide();
-        return c;
-    };
-
-    $(document).on('vclick', '.one-icon', function(){
-        for (var i = 1; i <= 5; i++) {
-            if ($(this).attr('id') !== 'icon'+i) {
-                $('#icon'+i).children('img').attr('src', './img/'+$('#icon'+i).children('img').attr('id')+'.png');
-                $('#icon'+i).removeClass('actual');
-            } else {
-                var icontype = $(this).children('img').attr('src');
-                $('.photoset').children('.showroom').children().css('marginLeft','0px').hide();
-                var photolayer = $(this).children('img').attr('id');
-                $('.'+photolayer).show().css('width', thislayerwidth(photolayer)+'px');
-                $(this).addClass('actual');
-            };
-        };
-    });
-	
-    $('.rightarrowgallery, .leftarrowgallery, .rightarrowemotion, .leftarrowemotion').hover(function(){
-        $(this).addClass('over'); 
-    }, function(){
-        $(this).removeClass('over');
-    });
-    $('.one-icon').hover(function(){
-        var val = $(this).children('img').attr('src');
-        if (val.indexOf('red') < 0) $(this).children('img').attr('src', val.substr(0, val.length-4)+'-red'+val.substr(val.length-4));
-    }, function(){
-        if ($(this).attr('class').indexOf('actual') < 0) $(this).children('img').attr('src', './img/'+$(this).children('img').attr('id')+'.png');
-    });
-
-
-    $(document).on('vclick','.rightarrowgallery, .leftarrowgallery', function(){
-        if ($(this).attr('class').indexOf('right') >= 0) var list = -1
-            else var list = +1;
-        for (var i = 1; i <= 5; i++) {
-            var input = $('#icon'+i).children('img').attr('src');
-            if (input.indexOf('red') > 0) {
-                $('#icon'+i).addClass('actual');
-                var actualphotos = $('#icon'+i).children('img').attr('id');
-                var marginleft = $('.'+actualphotos).css('marginLeft');
-                mrgnleft = parseInt(marginleft.substr(0,marginleft.length-2).valueOf());
-                var width1 = $('.showroom').width();
-                var width2 = $('.'+actualphotos).width();
-                if (mrgnleft == 0 && list > 0 || mrgnleft+(list)*width1 <= (list)*width2 && list < 0) {
-                    var num = i - list;
-                    if (num < 1) num = 5;
-                    if (num > 5) num = 1;
-                    if (num > 0 && num < 6) {
-                        $('#icon'+i).removeClass('actual');
-                        $('#icon'+i).children('img').attr('src', './img/'+$('#icon'+i).children('img').attr('id')+'.png');
-                        $('.photoset').children('.showroom').children().css('marginLeft','0px').hide();
-                        var photolayer = $('#icon'+num).children('img').attr('id');
-                        $('.'+photolayer).show().css('width', thislayerwidth(photolayer)+'px');
-                        var icontype = $('#icon'+num).children('img').attr('src');
-                        var output = icontype.substr(0, icontype.length-4) + '-red' + icontype.substr(icontype.length-4);
-                        $('#icon'+num).addClass('actual');
-                        $('#icon'+num).children('img').attr('src', output);
-                        break;
-                    };
-                } else {
-                    if (list > 0) {
-                        var val = (marginleft+width1)/-width1;
-                        if (val > 1) val = marginleft+width1+'px'
-                        else val = '0px';
-                    }
-                    if (list < 0) {
-                        var val = (width2 - width1 + marginleft)/width1;
-                        if (val > 1) val = marginleft-width1+'px'
-                        else val = 0-(width2-width1)+'px';
-                    }
-                    $('.'+actualphotos).animate({ "marginLeft": val }, "slow" );
-                };
-            };
-        };
-    });
-    $(document).on('vclick','.rightarrowemotion, .leftarrowemotion', function(){
-        if ($(this).attr('class').indexOf('right') >= 0) var list = +1 
-            else var list = -1;
-        var marginleft = $('.emotions').css('margin-left');
-        marginleft = marginleft.substr(0,marginleft.length-2).valueOf();
-        var width1 = $('.emotions').width();
-        var width2 = $('.emotionset').width();
-        var thiswidth = $('.emotions li:nth-of-type('+currentphotoset+')').width();
-        var nextwidth = $('.emotions li:nth-of-type('+(currentphotoset+list)+')').width();
-        var centers = (thiswidth+nextwidth)/2+10;
-        currentphotoset = currentphotoset+list;
-        if (currentphotoset == $('.emotions li').length) $('.rightarrowemotion').hide()
-            else $('.rightarrowemotion').show();
-        if (currentphotoset == 1) $('.leftarrowemotion').hide()
-            else $('.leftarrowemotion').show();
-        var val = marginleft-list*centers+'px';
-        $('.emotions').animate({ "margin-left": val}, "slow" );
-    });
-
-    jQuery(function($){
-        $.datepicker.regional['ru'] = {
-                closeText: 'Закрыть',
-                prevText: '&larr; Пред',
-                nextText: 'След &rarr;',
-                currentText: 'Сегодня',
-                monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь',
-                'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
-                monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн',
-                'Июл','Авг','Сен','Окт','Ноя','Дек'],
-                dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
-                dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
-                dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
-                weekHeader: 'Не',
-                dateFormat: 'dd.mm.yy',
-                firstDay: 1,
-                isRTL: false,
-                showMonthAfterYear: false,
-                yearSuffix: ''};
-        $.datepicker.setDefaults($.datepicker.regional['ru']);
-    });
-    $('input[name="event_date"]').datepicker();
 
     $(document).on('vclick', '.finishdemo', function(event){
         if (stages < 5) { 
@@ -647,8 +425,8 @@ $(document).ready(function(){
     $(document).on('vclick', '#goahead', function(event){
         event.preventDefault();
         if (isMobile.any()) {
-            $(this).prev().fadeIn();
-            $(this).prev().prev().hide();
+            $(this).next().next().fadeIn();
+            $(this).next().hide();
             $('.submit').show();
             $(this).hide();
         } else {
@@ -664,8 +442,8 @@ $(document).ready(function(){
                 $('.main').hide();
                 $('#videomax2').show();
             };
-            $(this).prev().fadeIn();
-            $(this).prev().prev().hide();
+            $(this).next().next().fadeIn();
+            $(this).next().hide();
             $('.submit').show();
             $(this).hide();
         };
