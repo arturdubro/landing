@@ -105,7 +105,7 @@ $(document).ready(function(){
     });
 
     $(document).on('vclick', '.finishdemo', function(event){
-        if (stages < 5) { 
+        if (stages < 6) { 
             event.preventDefault(); 
         } else {
             event.preventDefault();
