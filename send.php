@@ -22,11 +22,11 @@
         if(!preg_match($email_exp,$your_email)) {
           throw new Exception('Введите корректный адрес почты.<br />');
         }
-        $string_exp = "/^[А-Я .]{2,36}$/iu";
+        $string_exp = "/^[А-ЯA-Z .\-]{2,38}+$/iu";
         if(!preg_match($string_exp,$your_name)) {
           throw new Exception('Введите корректное имя.<br />');
         }
-        $string_exp = "/^[0-9]{7,11}+$/";
+        $string_exp = "/^[0-9 +()\-]{7,17}/";
         if(!preg_match($string_exp,$your_phone)) {
           throw new Exception('Номер телефона не должен содержать скобок, пробелов и дефисов. Только цифры.<br />');
         }
@@ -39,14 +39,15 @@
           throw new Exception('Необходимо указать число участников.<br />');
         }
 
-        $email_message = "Заказчик указал следующие данные:\n\n";
+        $email_message_us = "Заказчик указал следующие данные:\n\n";
+        $email_message_self = "Вы указали следующие данные:\n\n";
           
         function clean_string($string) {
           $bad = array("content-type","bcc:","to:","cc:","href");
           return str_replace($bad,"",$string);
         }
 
-        $email_message .= "Имя: ".clean_string($your_name)."\n";
+        $email_message = "Имя: ".clean_string($your_name)."\n";
         $email_message .= "Телефон: ".clean_string($your_phone)."\n";
         $email_message .= "Email: ".clean_string($your_email)."\n";
         $email_message .= "Количество участников: ".clean_string($how_many)."\n";
@@ -55,7 +56,14 @@
         $headers = 'From: '.$your_email."\r\n".
         'Reply-To: '.$your_email."\r\n" .
         'X-Mailer: PHP/' . phpversion();
-        @mail($email_to, $email_subject, $email_message, $headers);  
+
+        if (isset($_POST['copy_me'])) {
+            $email_message_self = $email_message_self.$email_message;
+            mail($your_email, $email_subject, $email_message_self, $headers);
+        };
+
+        $email_message_us = $email_message_us.$email_message;
+        @mail($email_to, $email_subject, $email_message_us, $headers);  
 
         $response['type'] = 'success';
         $response['message'] = 'Заявка отправлена, спасибо!';
