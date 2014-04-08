@@ -2,46 +2,68 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Морской бой</title>
+	<title>Шерлок Холмс против Эйнштейна</title>
 	<link href="./css/land.css" media="screen" rel="stylesheet" type="text/css">
 	<link href="./css/demo.css" media="screen" rel="stylesheet" type="text/css">
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="http://malsup.github.com/jquery.form.js"></script>
 	<script type="text/javascript">$(document).bind("mobileinit", function(){$.extend($.mobile,{autoInitializePage:false})});</script>
 	<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
-	<script type="text/javascript" src="demo.js"></script>
+	<script type="text/javascript" src="./js/jqueryui.min.js"></script>
+	<script type="text/javascript" src="./js/demo.js"></script>
+	<script type="text/javascript" src="./js/u2b.js"></script>
+	<script type="text/javascript" src="./js/formvalid.js"></script>
+	<script type="text/javascript" src="./js/datepicker.js"></script>
+	<script type="text/javascript" src="./js/galleries.js"></script>
 </head>
 <body>
 <div class="mainframe">
 	<div class="topline">
-		<span class="logo"><a href="http://best-quest.ru">BQ</a></span><span class="batship"><a href="index.html">Морской Бой</a></span><span class="sherlock"><a href="sh.html">Шерлок</a></span><!--<span class="download">Презентация&nbsp;&nbsp;<img src="./img/download.png" style="vertical-align: middle;"></span>--><span class="vk"><a href="http://vk.com/bqbsgame"><img src="./img/vk.png" style="vertical-align: middle;"></a></span><span class="claim"><a href="#reclaim">Заявка</a></span><!--<span class="contacts">Контакты</span>-->
+		<div class="logo"><a href="http://best-quest.ru">BQ</a></div><div class="batship"><a href="index.html">Морской Бой</a></div><!--<span class="sherlock"><a href="sh.html">Шерлок</a></span>--><!--<span class="download">Презентация&nbsp;&nbsp;<img src="./img/download.png" style="vertical-align: middle;"></span>--><a href="http://vk.com/bqbsgame"><div class="vk"></div></a><div class="menu-mailto"><a href="mailto:info@best-quest.ru">info@best-quest.ru</a></div><div class="menu-phone">8 921 976 38 76</div><div class="claim"><a href="#reclaim">Заявка</a></div><!--<span class="contacts">Контакты</span>-->
 	</div>
 	<div class="firstslide sh"></div>
 	<div class="maintext">
-		Морской бой – это командная игра,<br>использующая виртуальные инструменты<br> для реальных приключений.
+ 	Шерлок Холмс против Эйнштейна – это интеллектуальная<br>
+		приключенческая командная игра
+	</div>
+	<div class="kawasaki">
+		<div class="yamaha">
+		<div class="kawasaki-text">Почему игра? В играх, как в зеркале, отражается то, что человек знает и чему необходимо научиться. В играх отражается поведение. Это системы мгновенной обратной связи. Вместо того чтобы слушать скучные лекции по командообразованию, в игре вы получаете  индивидуальный урок, отвечающий вашим конкретным потребностям.</div>
+		<div class="kawasaki-arrow"></div>
+		<div class="kawasaki-face">
+			<img src="./img/robert.png">
+			<span>
+				<h2>Роберт Кийосаки</h2>
+				Предприниматель,<br>
+				инвестор, писатель и<br>
+				преподаватель.
+			</span>
+		</div>
+		</div>
 	</div>
 	<div class="pretext-extend">
-		Задача игры <span style="color:rgb(204,51,51);">найти</span> и <span style="color:rgb(204,51,51);">потопить</span> корабли<br> соперников.
+		Задача игры <span style="color:rgb(204,51,51);">найти</span> и <span style="color:rgb(204,51,51);">потопить</span> корабли<br> соперников
 	</div>
 	<div style="clear:both;"></div>
 	<div class="text-extend">
 		<div class="text-col">
-			<span class="bignum">1</span><span class="redhead">Найти</span><br>
-			В игре вы ищите корабли, разгадывая загадки с помощью вашего телефона или планшета.
+			<span class="bignum">1</span><span class="redhead">Найти</span><br><br>
+			В игре вы ищите корабли, разгадывая загадки с помощью вашего телефона или планшета
 		</div>
 		<div class="text-col" style="margin-left:100px;">
-			<span class="bignum">2</span><span class="redhead">Потопить</span><br>
-			Чтобы потопить корабли вам нужно пройти захватывающие испытания в реальном мире.
+			<span class="bignum">2</span><span class="redhead">Потопить</span><br><br>
+			Чтобы потопить корабли, вам нужно пройти захватывающие испытания в реальном мире
 		</div>
 	</div>
 	<div style="clear:both;"></div>
 	<div class="post-extend"><img src="./img/horizline.png"></div>
 	<div class="contest-examples">
-		<div id="header"><ul><li><h1 class="headertext">Испытаnия</h1></li></ul></div>
+		<!--<div id="header"><ul><li><h1 class="headertext">Испытания</h1></li></ul></div>-->
 		<div style="clear:both;"></div>
 		<div class="iconset">
-			<div class="one-icon" id="icon1"><img src="./img/extreme-red.png" id="extreme"><br>Экстремальные</div>
-			<div class="one-icon" id="icon2"><img src="./img/teamwork.png" id="teamwork"><br>Командные</div>
-			<div class="one-icon" id="icon3"><img src="./img/fungames.png" id="fungames"><br>Развлекательные</div>
+			<div class="one-icon actual" id="icon1"><img src="./img/teamwork-red.png" id="teamwork"><br>Командные</div>
+			<div class="one-icon" id="icon2"><img src="./img/fungames.png" id="fungames"><br>Развлекательные</div>
+			<div class="one-icon" id="icon3"><img src="./img/extreme.png" id="extreme"><br>Экстремальные</div>
 			<div class="one-icon" id="icon4"><img src="./img/citytour.png" id="citytour"><br>Арт-объект</div>
 			<div class="one-icon" id="icon5"><img src="./img/cyphers.png" id="cyphers"><br>Шифры</div>
 		</div>
@@ -49,19 +71,12 @@
 			<div class="leftarrowgallery"></div>
 			<div class="rightarrowgallery"></div>
 			<div class="showroom">
-				<div class="extreme">
-					<ul class="photogallery">
-					<li><img src='./photo/1.jpg'><br>свободное падение</li>
-					<li><img src='./photo/2.jpg'><br>мост</li>
-					<li><img src='./photo/3.jpg'><br>слепой водитель</li>
-					</ul>
-				</div>
 				<div class="teamwork">
 					<ul class="photogallery">
 					<li><img src='./photo/5.jpg'><br>водопровод</li>
-					<li><img src='./photo/6.jpg'><br>мегафутбол</li>
-					<li><img src='./photo/7.jpg'><br>опасная жидкость</li>
+					<li><img src='./photo/6.jpg'><br>торпеда</li>
 					<li><img src='./photo/8.jpg'><br>слепой лабиринт</li>
+					<li><img src='./photo/lock.jpg'></li>
 					</ul>
 				</div>
 				<div class="fungames">
@@ -69,6 +84,15 @@
 					<li><img src='./photo/9.jpg'><br>агент-пароль</li>
 					<li><img src='./photo/10.jpg'><br>чек на сумму</li>
 					<li><img src='./photo/17.jpg'><br>мегапазл</li>
+					<li><img src='./photo/lock.jpg'></li>
+					</ul>
+				</div>
+				<div class="extreme">
+					<ul class="photogallery">
+					<li><img src='./photo/1.jpg'><br>свободное падение</li>
+					<li><img src='./photo/2.jpg'><br>мост</li>
+					<li><img src='./photo/3.jpg'><br>слепой водитель</li>
+					<li><img src='./photo/lock.jpg'></li>
 					</ul>
 				</div>
 				<div class="citytour">
@@ -76,6 +100,7 @@
 					<li><img src='./photo/11.jpg'><br>башня грифонов</li>
 					<li><img src='./photo/12.jpg'><br>запасная колонна</li>
 					<li><img src='./photo/13.jpg'><br>шахматный дворик</li>
+					<li><img src='./photo/lock.jpg'></li>
 					</ul>
 				</div>
 				<div class="cyphers">
@@ -83,6 +108,7 @@
 					<li><img src='./photo/14.jpg'><br>3D зрениие</li>
 					<li><img src='./photo/15.jpg'><br>записка Оттендорфа</li>
 					<li><img src='./photo/16.jpg'><br>слово невидимка</li>
+					<li><img src='./photo/lock.jpg'></li>
 					</ul>
 				</div>
 			</div>
@@ -90,13 +116,13 @@
 	</div>
 	<div style="clear:both;"></div>
 	<div class="demogame">
-		<div id="header"><ul><li><h1 class="headertext">поPROбуй</h1></li></ul></div>
+		<div id="header"><ul><li><h1 class="headertext">попробуй</h1></li></ul></div>
 		<div style="clear:both;"></div>
 		<div class="demogamebg">
 			<div class="startplug" id="startplug">
-				<div class="startdemo" id="startdemo">Попробовать тестовую игру <img src="./img/demo.png" style="vertical-align: middle;"></div>
+				<div class="startdemo" id="startdemo"><img src="./img/start_demo.png" style="margin-bottom:30px;"><br>Попробовать<br>демо игру</div>
 			</div>
-			<div class="wrapper">
+			<div class="wrapper blurred">
 				<div class="demoheader">
 					<div class="info"><p style="font-size: 130%;">Флагман • <span id="timer">0:00:00</span></p>
 						<a href="" style="color:#808080; font-size: 90%; text-decoration: none;">Статистика</a><span id="stats"></span></div>
@@ -105,22 +131,23 @@
 				</div>
 				<div id="videomax1"></div>
 				<div id="videomax2"></div>
+				<div class="finished"><img src="./img/gold-case.jpg"></div>
 				<div class="main">
 					<div class="leftcol"><script language='javascript'>table(7,7);</script></div>
 					<div class="rightcol">
 						<div id="alert">
-							<div class="hello"><p style="font-size:20px;">Добро пожаловать!</p><br><p style="font-size:20px;">Цель игры:</p> Найти и потопить 2 корабля</p><br><p style="font-size:20px;">Шаг 1:</p>Выбирите и нажмите на клетку на поле слева.</div>
-							<div class="firsttimesure"><p style="font-size:20px; color: red;">Внимание!</p>Каждая открытая, но оставленная без ответа клетка, увеличивает ваше игровое время на 3 минуты.<br><br>Вы уверены что хотите открыть эту клетку?
+							<div class="hello"><p style="font-size:20px;">Добро пожаловать!</p><br><p style="font-size:20px;" class="bq-red">Цель игры:</p> Найти и потопить 2 корабля</p><br><p style="font-size:20px;">Шаг 1:</p>Выбирите и нажмите на клетку на поле слева.</div>
+							<div class="firsttimesure"><p style="font-size:20px;" class="bq-red">Внимание!</p>Каждая открытая, но оставленная без ответа клетка, увеличивает ваше игровое время на 3 минуты.<br><br>Вы уверены что хотите открыть эту клетку?
 								<div class="buttons"><a href="#" class="button yes">Да</a><a href="#" class="button no">Нет</a></div>
 							</div>
-							<div class="sure">Вы уверенны что хотите открыть эту клетку?
+							<div class="sure">Открыть эту клетку?
 								<div class="buttons"><a href="#" class="button yes">Да</a><a href="#" class="button no">Нет</a></div>
 							</div>
-							<div class="question"><p style="font-size:20px; color: red;">Охранный вопрос клетки</p>
-								Верный ответ покажет вам результат выстрела.<br><br>Мы загадали цифру от 0 до 9 включительно. Угадайте её:
+							<div class="question"><p style="font-size:20px;" class="bq-red">Охранный вопрос клетки</p>
+								Верный ответ покажет вам результат выстрела.<br><br>Вопрос на интуицию!<br>Мы загадали цифру от 0 до 9 включительно. Угадайте её:
 							</div>
 							<div class="reefquestion"><h2>Риф!</h2><br>
-								Опасность столкновения с рифом!<br>У Вас есть 60 секунд, чтобы дать ответ на вопрос.<br>Мы загадали цифру от 0 до 9 включительно. Угадайте её:<br><span style="color:red;">Осталось: <span id="reeftimer">60</span> сек.</span><br>
+								Опасность столкновения с рифом!<br>У Вас есть 60 секунд, чтобы дать ответ на вопрос.<br>Мы загадали цифру от 0 до 9 включительно. Угадайте её:<br><span class="bq-red">Осталось: <span id="reeftimer">60</span> сек.</span><br>
 							</div>
 							<div class="reef ok"><h2>Риф</h2><br>
 								Вы успешно уклонились от рифа.<br>
@@ -133,24 +160,24 @@
 							</div>
 							<div class="ship1">
 								<p style="font-size:20px;">Вы нашли однопалубный корабль!</p><br>Чтобы подбить корабль Вам нужно отправиться в указанное место и, пройдя испытание, получить код на уничтожение корабля.<br>
+								<input type=submit value="Отправиться" data-enhanced="true" id="goahead" style="margin: 10px 0 10px 0;" class="button">
 								<img src="./img/map-ship1.png" width="365px" style="margin: 10px 0 10px 0;" class="maphide">
 								<div class="videoframe">
-									<img src="./img/video1.png" id='videomin1' width="365px" style="margin: 10px 0 10px 0;">
+									<img src="./img/video1.png" id='videomin1' width="365px" style="margin: 10px 0 0px 0;">
 									Выполнив задание, введите код ниже и нажмите Ответить:
 								</div>
-								<input type=submit value="Отправиться" data-enhanced="true" id="goahead" class="button">
 							</div>
 							<div class="ship2a">
 								<p style="font-size:20px;">Вы нашли часть корабля.</p><br>Чтобы задание открылось, вам неоходимо найти все части корабля. Ищите дальше.
 							</div>
 							<div class="ship2b">
-								<p style="font-size:20px;">Двупалубник найден!</p><br>Отправляйтесь на поиски клада, не забудьте прихватить с собой карту и свою верную команду.<br>
+								<p style="font-size:20px;">Двупалубник найден!</p><br>Чтобы подбить корабль Вам нужно отправиться в указанное место и, пройдя испытание, получить код на уничтожение корабля.<br><br>
+								<input type=submit value="Отправиться" data-enhanced="true" id="goahead" style="margin: 10px 0 10px 0;" class="button">
 								<img src="./img/map-ship2.png" width="365px" style="margin: 10px 0 10px 0;" class="maphide">
 								<div class="videoframe">
-									<img src="./img/video1.png" id='videomin2' width="365px" style="margin: 10px 0 10px 0;">
+									<img src="./img/video1.png" id='videomin2' width="365px" style="margin: 10px 0 0px 0;">
 									Выполнив задание, введите код ниже и нажмите Ответить:
 								</div>
-								<input type=submit value="Отправиться" data-enhanced="true" id="goahead" class="button">
 							</div>
 							<form action="#" method="POST" class="submit">
 								<input type=text id="simple" value="" class="answer">
@@ -173,52 +200,27 @@
 	</div>
 	<div style="clear:both;"></div>
 	<div class="fotogallery">
-		<div id="header"><ul><li><h1 class="headertext">фотограfии</h1></li></ul></div>
+		<div id="header"><ul><li><h1 class="headertext">фотографии</h1></li></ul></div>
+		<div style="clear:both;"></div>
 		<div class="emotionset">
 			<div class="leftarrowemotion"></div>
 			<div class="rightarrowemotion"></div>
 			<div class="emotionswrap">
 				<div class="emotions">
 					<ul class="photoemotions">
-					<li><img src='./emotions/1.jpg'></li>
-					<li><img src='./emotions/2.jpg'></li>
-					<li><img src='./emotions/3.jpg'></li>
-					<li><img src='./emotions/4.jpg'></li>
-					<li><img src='./emotions/5.jpg'></li>
-					<li><img src='./emotions/6.jpg'></li>
-					<li><img src='./emotions/7.jpg'></li>
-					<li><img src='./emotions/8.jpg'></li>
-					<li><img src='./emotions/9.jpg'></li>
-					<li><img src='./emotions/10.jpg'></li>
-					<li><img src='./emotions/11.jpg'></li>
-					<li><img src='./emotions/12.jpg'></li>
-					<li><img src='./emotions/13.jpg'></li>
-					<li><img src='./emotions/14.jpg'></li>
-					<li><img src='./emotions/15.jpg'></li>
-					<li><img src='./emotions/16.jpg'></li>
-					<li><img src='./emotions/17.jpg'></li>
-					<li><img src='./emotions/18.jpg'></li>
-					<li><img src='./emotions/19.jpg'></li>
-					<li><img src='./emotions/20.jpg'></li>
-					<li><img src='./emotions/21.jpg'></li>
-					<li><img src='./emotions/22.jpg'></li>
-					<li><img src='./emotions/23.jpg'></li>
-					<li><img src='./emotions/24.jpg'></li>
-					<li><img src='./emotions/25.jpg'></li>
-					<li><img src='./emotions/26.jpg'></li>
-					<li><img src='./emotions/27.jpg'></li>
-					<li><img src='./emotions/28.jpg'></li>
-					<li><img src='./emotions/29.jpg'></li>
-					<li><img src='./emotions/30.jpg'></li>
-					<li><img src='./emotions/31.jpg'></li>
-					<li><img src='./emotions/32.jpg'></li>
-					<li><img src='./emotions/33.jpg'></li>
-					<li><img src='./emotions/34.jpg'></li>
-					<li><img src='./emotions/35.jpg'></li>
-					<li><img src='./emotions/36.jpg'></li>
-					<li><img src='./emotions/37.jpg'></li>
-					<li><img src='./emotions/38.jpg'></li>
-					<li><img src='./emotions/39.jpg'></li>
+					<li><img src='./emotions/1.jpg'><img src='./emotions/2.jpg'><img src='./emotions/3.jpg'></li>
+					<li><img src='./emotions/4.jpg'><img src='./emotions/5.jpg'><img src='./emotions/6.jpg'></li>
+					<li><img src='./emotions/7.jpg'><img src='./emotions/8.jpg'><img src='./emotions/9.jpg'></li>
+					<li><img src='./emotions/10.jpg'><img src='./emotions/11.jpg'><img src='./emotions/12.jpg'></li>
+					<li><img src='./emotions/13.jpg'><img src='./emotions/14.jpg'><img src='./emotions/15.jpg'></li>
+					<li><img src='./emotions/16.jpg'><img src='./emotions/17.jpg'><img src='./emotions/18.jpg'></li>
+					<li><img src='./emotions/19.jpg'><img src='./emotions/20.jpg'><img src='./emotions/21.jpg'></li>
+					<li><img src='./emotions/22.jpg'><img src='./emotions/23.jpg'><img src='./emotions/24.jpg'></li>
+					<li><img src='./emotions/25.jpg'><img src='./emotions/26.jpg'><img src='./emotions/27.jpg'></li>
+					<li><img src='./emotions/28.jpg'><img src='./emotions/29.jpg'><img src='./emotions/30.jpg'></li>
+					<li><img src='./emotions/31.jpg'><img src='./emotions/32.jpg'><img src='./emotions/33.jpg'></li>
+					<li><img src='./emotions/34.jpg'><img src='./emotions/35.jpg'><img src='./emotions/36.jpg'></li>
+					<li><img src='./emotions/37.jpg'><img src='./emotions/38.jpg'><img src='./emotions/39.jpg'></li>
 					</ul>
 				</div>
 			</div>
@@ -229,11 +231,15 @@
 		<div style="clear:both;"></div>
 		<div style="margin:0 auto; width:1110px;">
 		<div class="reply-author">
-			фотка и описание автора отзыва
+			<img src="./img/lapin.png">
+			<span>
+				<h2>Роман Лапин</h2>
+				CEO Evercode Lab
+			</span>
 		</div>
 		<div class="reply-left"></div>
 		<div class="reply-text">
-			Выражаем благодарность коллективу компании Best Quest
+			Игра «Морской бой» — это очень крутой способ размять мозги, побегать, узнать коллег и друзей с новых сторон. И, конечно, почувствовать себя одной командой.<br><br>Очень понравилась идея совместить онлайн игру и реальные задания на местности. У каждого была возможность проявить себя: кто-то в мозговых штурмах, кто-то в активных подвижных заданиях, при этом весело и с азартом.
 		</div>
 		<div class="reply-text" style="margin-left:50px;">
 			Выражаем благодарность коллективу компании Best Quest за проведённую корпоративную игру «Морской бой».<br><br>Коллектив ООО «Техноавиа-Санкт-Петербург» высоко оценил подготовку и проведение мероприятия. Положительные эмоции надолго запомнились сотрудникам нашей организации.
@@ -242,17 +248,25 @@
 		<div class="reply-author">
 			<img src="./img/kokin.png">
 			<span>
-				<h2>Д.Р.Кокин</h2>
+				<h2>Дмитрий Кокин</h2>
 				ТехноАвиа, Руководитель отдела<br> по работе с<br> корпоративными клиентами
 			</span>
 		</div>
 		</div>
 	</div><a name="reclaim"></a>
 	<div style="clear:both;"></div>
+	<div class="clients">
+		<img src="./img/logotypes/web-projects.png">
+		<img src="./img/logotypes/tehnoavia.png">
+		<img src="./img/logotypes/odnoklassniki.png">
+		<img src="./img/logotypes/peter-service.png">
+	</div>
+	<div style="clear:both;"></div>
 	<div class="reclaim">
 		<fieldset>
-		<legend>ЗаRвка</legend>
-		<form action="send.php" method="POST" class="reclaim-form">
+		<legend>Заявка</legend>
+		<form action="send.php" method="POST" id="contact-us" class="reclaim-form">
+			<div id="contact-us-message" style="display: none;"></div>
 			<label>Контактное лицо</label><br>
 			<input type=text name="your_name" placeholder="Ваше имя" class="reclaim-form"><br>
 			<div style="float:left; width:300px;">
@@ -263,26 +277,64 @@
 			<div style="float:left; margin-left:50px; width:300px;">
 			<input type=text name="your_phone" placeholder="Телефон" class="reclaim-form"><br>
 			<label>Количество участников</label><br>
-			<select name="how_many" required class="reclaim-form">
-				<option value="1-20">1-20</option>
-				<option value="21-50">21-50</option>
-				<option value="51-150">51-150</option>
-				<option value="151">151-...</option>
-			</select><br>
+			<input type=text name="how_many" placeholder="Число" class="reclaim-form"><br>
 			</div>
 			<div style="clear:both;"></div>
 			<label>Текст заявки</label><br>
-			<textarea name="reclaim_text" class="reclaim-form"></textarea>
+			<textarea name="reclaim_text" class="reclaim-form" placeholder="Ваши пожелания"></textarea>
 			<input type=submit name="submit" value="Отправить заявку" class="reclaim-form">
 			<input type=checkbox name="copy_me" checked class="reclaim-form">Отправить копию мне на email
 			<div class="form-add-phone">Также вы можете связаться с нашим<br> менеджером, по телефону<br><b>8 921 976 38 76</b></div>
 		</form>
+		<div class="thanksalot">
+			Спасибо. Заявка принята. Вам перезвонит менеджер Вашего проекта.
+		</div>
 		</fieldset>
 	</div>
 	<div style="clear:both;"></div>
 	<div class="bottomline">
-		<span class="logo"><a href="http://best-quest.ru">BQ</a></span><span class="download"><a href="http://best-quest.ru">Best-Quest.ru</a></span><span class="sherlock"><a href="bqbs.ru">BQBS.ru</a></span><span class="vk"><a href="http://vk.com/bqbsgame"><img src="./img/vk.png" style="vertical-align: middle;"></a></span><span class="contacts"><a href="http://formazon.com">Дизайн сайта formazon.com</a></span>
+		<div class="logo"><a href="http://best-quest.ru">BQ</a></div><div class="download"><a href="http://best-quest.ru">Best-Quest.ru</a></div><div class="sherlock"><a href="bqbs.ru">BQBS.ru</a></div><a href="http://vk.com/bqbsgame"><div class="vk"></div></a><div class="contacts"><a href="http://formazon.com">Дизайн сайта formazon.com</a></div>
 	</div>
 </div>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter24392548 = new Ya.Metrika({id:24392548,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/24392548" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-2912344-21', 'bqbs.ru');
+  ga('send', 'pageview');
+
+</script>
+
 </body>
 </html>
