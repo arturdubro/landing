@@ -18,26 +18,6 @@
         $reclaim_text = $_POST['reclaim_text'];
 
         $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
-          
-        if(!preg_match($email_exp,$your_email)) {
-          throw new Exception('Введите корректный адрес почты.<br />');
-        }
-        $string_exp = "/^[А-ЯA-Z .\-]{2,38}+$/iu";
-        if(!preg_match($string_exp,$your_name)) {
-          throw new Exception('Введите корректное имя.<br />');
-        }
-        $string_exp = "/^[0-9 +()\-]{7,17}/";
-        if(!preg_match($string_exp,$your_phone)) {
-          throw new Exception('Номер телефона не должен содержать скобок, пробелов и дефисов. Только цифры.<br />');
-        }
-        $string_exp = "/^[0-9.\/]{8,10}+$/";
-        if(!preg_match($string_exp,$event_date)) {
-          throw new Exception('Проверьте дату проведения.<br />');
-        }
-        $string_exp = "/^[0-9]{1,3}+$/";
-        if(!preg_match($string_exp,$how_many)) {
-          throw new Exception('Необходимо указать число участников.<br />');
-        }
 
         $email_message_us = "Заказчик указал следующие данные:\n\n";
         $email_message_self = "Вы указали следующие данные:\n\n";
@@ -63,7 +43,7 @@
         };
 
         $email_message_us = $email_message_us.$email_message;
-        @mail($email_to, $email_subject, $email_message_us, $headers);  
+        mail($email_to, $email_subject, $email_message_us, $headers);  
 
         $response['type'] = 'success';
         $response['message'] = 'Заявка отправлена, спасибо!';
