@@ -96,7 +96,6 @@ $(document).ready(function(){
     var shiptype = '';
     var notfirsttime = '1';
     var stages = 1;
-    var currentphotoset = 1;
 
     $(document).bind('startgametimer', startTime);
     $(document).on('vclick', '#startdemo', function(){

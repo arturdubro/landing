@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    var currentphotoset = 1;
+    
     $(window).load(function(){
         $('.teamwork').show().css('width', thislayerwidth('teamwork')+'px');
         $('.emotions').show().css('width', emotionslayerwidth()).css('marginLeft', firstemotionsmargin());
