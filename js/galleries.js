@@ -1,5 +1,6 @@
+var currentphotoset = 1;
+
 $(document).ready(function(){
-    var currentphotoset = 1;
     
     $(window).load(function(){
         $('.teamwork').show().css('width', thislayerwidth('teamwork')+'px');
